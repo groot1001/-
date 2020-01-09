@@ -1,0 +1,36 @@
+/* pages/directory/directory.wxss */
+.directory_max{
+  
+position: relative;
+ height: 172rpx;
+ border-bottom: 2rpx solid #f2f2f2;
+  padding-left: 100rpx;
+}
+.directory_item_bottom{
+  display: flex;
+  font-size: 30rpx;
+  color: #9a9a9a;
+  margin-top: 16rpx;
+}
+.directory_tit{
+  font-size: 36rpx;
+  padding-top: 34rpx;
+}
+.dib_item:first-child{
+width: 42%;
+}
+.yuandian{
+height: 34rpx;
+width: 34rpx;
+background-color: #3c87ca;
+box-shadow: 0 0 8rpx #3c87ca;
+border-radius: 100%;
+position: absolute;
+top:35rpx;
+left: 35rpx;
+}
+.iixy{
+  position: absolute;
+  right: 25rpx;
+  top: 70rpx
+}

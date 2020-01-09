@@ -1,0 +1,315 @@
+/* pages/mycollect/mycollect.wxss */
+
+/* pages/mycourse/mycourse.wxss */
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direaction {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.rgbred {
+  color: rgb(255, 89, 77);
+}
+
+.mycollectbox {
+}
+
+.mycollectlist {
+}
+
+.mycouselistItem {
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+}
+
+.turnback-management {
+  height: 88rpx;
+  background-color: rgb(60, 135, 202);
+  padding: 0 32rpx;
+}
+
+.managebtn {
+  color: rgb(241, 246, 250);
+  font-size: 30rpx;
+}
+
+.videoleft {
+  /* margin-right: 20rpx; */
+  width: 55rpx;
+}
+
+.noicon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 30rpx;
+  border: 1rpx solid rgb(229, 229, 229);
+  border-radius: 100%;
+}
+
+.noicon1 {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 30rpx;
+}
+
+.noicon1 icon {
+  width: 100%;
+}
+
+.haveicon {
+  margin-right: 30rpx;
+}
+
+/* .bigtitbox{
+  height: 78rpx;
+  background-color: rgb(229,229,229);
+  color: rgb(51,51,51);
+  font-size: 32rpx;
+  padding: 0 30rpx 0 36rpx;
+} */
+
+/* .bigtitleft{
+   width: 646rpx; 
+} */
+
+/* .bigrank{
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 100%;
+  background-color: #fff;
+  margin-right: 12rpx;
+} */
+
+/* .bigtit{
+
+} */
+
+/* .showicon{
+  width: 20rpx;
+  height: 38rpx;
+} */
+
+/* .smalllist{
+  padding: 0 20rpx;
+} */
+
+.smalllistItem {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgb(235, 235, 235);
+  width: 100%;
+}
+
+smalllistItemleft {
+}
+
+.leftitem {
+  width: 222rpx;
+  height: 156rpx;
+  margin-right: 29rpx;
+  background-color: #ccc;
+}
+
+.leftitem {
+  width: 222rpx;
+  height: 156rpx;
+}
+
+.middleitem {
+  width: 200rpx;
+  padding-top: 9rpx;
+}
+
+.smalltit {
+  margin-bottom: 21rpx;
+  color: rgb(102, 102, 102);
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.smallrank {
+}
+
+.starnum image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.rankgrade {
+  color: rgb(60, 135, 202);
+  font-size: 26rpx;
+}
+
+.learnnum {
+  color: rgb(255, 89, 1);
+  font-size: 26rpx;
+}
+
+.rightitem {
+  color: rgb(153, 153, 153);
+  font-size: 26rpx;
+  margin-top: 8rpx;
+  text-align: right;
+}
+
+.isbuy {
+}
+
+.studynum {
+  margin-bottom: 21rpx;
+}
+
+.stydycount {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+/* 我的题目板块 */
+
+.bigtitbox {
+  height: 78rpx;
+  background-color: rgb(229, 229, 229);
+  color: rgb(51, 51, 51);
+  font-size: 32rpx;
+  padding: 14rpx 30rpx 14rpx 36rpx;
+}
+
+.bigtitleft {
+  /* width: 646rpx; */
+}
+
+.bigrank {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  background-color: #fff;
+  margin-right: 26rpx;
+}
+
+.bigtit {
+  font-size: 32rpx;
+  color: rgb(51, 51, 51);
+}
+
+.subclasslist {
+  /* padding: 32rpx 0 8rpx 44rpx; */
+  padding-right: 60rpx;
+  padding-top: 38rpx;
+}
+
+.subclassitembox {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 30rpx 44rpx;
+}
+
+.subclassitem {
+  height: 100%;
+  font-size: 30rpx;
+  color: rgb(102, 102, 102);
+}
+
+.subclassind {
+  margin-right: 10rpx;
+}
+
+.subclasscontent {
+  letter-spacing: 3rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+/* 导航 */
+
+.collect-nav {
+  width: 100%;
+  font-size: 36rpx;
+  position: relative;
+}
+
+.video-nav {
+  width: 50%;
+  padding: 26rpx 0;
+}
+
+.que-nav {
+  width: 50%;
+  padding: 26rpx 0;
+}
+
+.navline {
+  width: 4rpx;
+  height: 36rpx;
+  background-color: rgb(238, 238, 238);
+  position: absolute;
+  left: 50%;
+  top: 35%;
+}
+
+.nav-bottom {
+  border-bottom: 5rpx solid rgb(60, 135, 202);
+  color: rgb(60, 135, 202);
+}
+
+.noque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 179rpx;
+  color: #ccc;
+  font-size: 43rpx;
+}
+
+/* 底部删除板块 */
+
+.deletebox {
+  width: 100%;
+  font-size: 36rpx;
+  position: fixed;
+  bottom: 0;
+}
+
+.allselect {
+  width: 50%;
+  padding: 41rpx 0;
+}
+
+.delnav {
+  width: 4rpx;
+  height: 36rpx;
+  background-color: rgb(238, 238, 238);
+  position: absolute;
+  left: 50%;
+  top: 35%;
+}
+
+.delbtn {
+  padding: 41rpx 0;
+  width: 50%;
+  color: rgb(60, 135, 202);
+}

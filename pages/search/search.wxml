@@ -1,0 +1,84 @@
+<!--pages/search/search.wxml-->
+<form bindsubmit='search'>
+  <view class='search_top'>
+
+    <view class='search_input'>
+      <input bindinput="bindKeyInput" name="searchname" placeholder="请输入您要搜索的内容" />
+    </view>
+    <button form-type="submit" class='search_icon'>
+      <text style='font-size:42rpx;color:#d2d5da' class='iconfont icon-sousuo'></text>
+    </button>
+
+  </view>
+</form>
+
+
+<view wx:if="{{err_page==false&&success_page==false}}">
+  <view wx:if="{{search_datas.length>0}}" class='search_h_recentiy_border'>
+    <view class='search_h_recentiy'>
+      <view style='display: flex;'>
+        <view class=''>
+          <text style='font-size:42rpx;color:#d2d5da' class="iconfont icon-lishijilu"></text>
+        </view>
+        <view class='search_h_text'>最近搜索</view>
+      </view>
+      <view bindtap='dee_search_datas' style='font-size:42rpx;color:#d2d5da' class='iconfont icon-guanbi'></view>
+    </view>
+    <view class='search_h_recentiy_item'>
+
+      <view wx:for="{{search_datas}}" bindtap='search_tow' data-val='{{item}}' class='sri'>
+        <text>{{item}}</text>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='search_h_recentiy_border'>
+    <view class='search_h_recentiy'>
+      <view style='display: flex;'>
+        <view class=''>
+          <text style='font-size:42rpx;color:#d2d5da' class="iconfont icon-remen"></text>
+        </view>
+        <view class='search_h_text'>热门搜索</view>
+      </view>
+      <!-- <view style='font-size:42rpx;color:#d2d5da' class='iconfont icon-guanbi'></view> -->
+    </view>
+    <view class='search_h_recentiy_item'>
+
+      <view  wx:for="{{['初级会计','实操会计','中级会计']}}" bindtap='search_tow' data-val='{{item}}' class='sri'>
+        <text>{{item}}</text>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view wx:if="{{success_page==true}}" class='success_page'>
+<view class='rest_num'>搜索出<text style='color:#3c87ca;'>{{simulation2.length}}</text>个相关课程</view>
+    <!-- 视频列表 -->
+<view class="ship-ul">
+ <view class="ship-li" wx:for="{{simulation2}}" wx:key="{{index}}">
+   <image class="img1" src='../../images/ship-1.png'></image>
+   <view class="ship-js">
+     <text class="text1">{{item.title}}</text>
+     <view class="ship-star">
+      <!-- <image wx:for="{{item.star}}" src='{{item.img}}'></image> -->
+      <label  style='font-size:22rpx;color:#3c87ca;margin-left:2rpx;' wx:for="{{item.star}}" class='iconfont icon-xingxing'></label>
+      
+      <text class="text2">{{item.fs}}</text>
+     </view>
+     <view class="ship-zz">
+     <text>{{item.zz}}</text>
+      <text class="text-right">{{item.pec}}</text>
+     </view>
+   </view>
+ </view>
+</view>
+
+
+</view>
+<view wx:if="{{err_page==true}}" class='err_page'>
+  <view class='errpage_img'>
+    <image mode="widthFix" src='../../images/errpage.jpg'></image>
+  </view>
+  <view class='errpage_text'>暂无符合条件课程</view>
+</view>

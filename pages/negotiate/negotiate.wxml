@@ -1,0 +1,32 @@
+<!--pages/negotiate/negotiate.wxml-->
+<view class="negotiatebox">
+  <text class="negotiateInfo">
+   欢迎使用学乐佳会计服务网站（以下简称“本网站”），本网站是由深圳学乐佳会计服务有限公司创建并运行维护
+   </text>
+  <view class="negotiatelist">
+    <view class="negotiateitem">
+      <text class="negotiateitemtit">
+         第一条 协议的接受
+       </text>
+      <text class="negotiateitemcontent">
+       1.1任何用户在使用本网站、接受本网站服务、浏览本网站信息、注册为本网站会员之前，请务必仔细阅读本协议。用户访问本网站以及通过各种方式使用本网站
+       </text>
+    </view>
+    <view class="negotiateitem">
+      <text class="negotiateitemtit">
+         第二条 学员注册信息及相关规定
+       </text>
+      <text class="negotiateitemcontent">
+     2.1注册时按照注册提示准 确提供用户名和密码以及详尽的个人资料；
+       </text>
+    </view>
+    <view class="negotiateitem">
+      <text class="negotiateitemtit">
+         第三条 学员账号使用规则
+       </text>
+      <text class="negotiateitemcontent">
+      3.1用户注册（报名）成功成为网站的学员后，基学员账号系网站识别学员身份并借以提代产品及服务的叭一标识。学员应受着管理期帐号，确保个人账发脾气安全并对基账号下的行为、扣作负全部责任。
+       </text>
+    </view>
+  </view>
+</view>

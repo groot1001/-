@@ -1,0 +1,25 @@
+<!--pages/video_details_comment/video_details_comment.wxml-->
+<view class="my_to_comment_top">
+  <text>你觉得课程难吗？</text>
+  <view class="difficulty_box">
+    <view bindtap="difficulty_select" data-difficulty="0" class="difficulty_item {{difficulty==0?'this_sle':''}}">
+      <text class="iconfont icon-biaoqing_weixiao_B icon_ic"></text>
+      <text class="icon_text">简单</text>
+    </view>
+    <view bindtap="difficulty_select" data-difficulty="1" class="difficulty_item {{difficulty==1?'this_sle':''}}">
+      <text class="iconfont icon-yiban icon_ic"></text>
+      <text class="icon_text">一般</text>
+    </view>
+    <view  bindtap="difficulty_select" data-difficulty="2" class="difficulty_item {{difficulty==2?'this_sle':''}}">
+      <text class="iconfont icon-cha icon_ic"></text>
+      <text class="icon_text">差</text>
+    </view>
+  </view>
+</view>
+<view class="">
+ <form bindsubmit="comment_submit">
+   <textarea class="comment_textarea" value="{{comment_val}}" name='comment_content' placeholder="请输入您的宝贵意见（至少10字）。此处只处理意见反馈，不答疑若有具体问题，请到答疑处提问。" placeholder-style="font-size:12px;"></textarea>
+   <input class="qq" placeholder="请留下联系QQ，方便我们解决问题" name='qq' placeholder-style="font-size:12px;" value="{{qq}}"></input>
+     <button class="btn" form-type="submit"> 提交 </button>
+  </form>
+</view>

@@ -1,0 +1,5 @@
+/* pages/myanswer/myanswer.wxss */
+@import "../answertemplate/answertemplate.wxss";
+.gz-ul {
+margin-top: 0;
+}

@@ -1,0 +1,168 @@
+/* pages/myplay/myplay.wxss */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-direction {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.myplaybox {
+}
+
+.turnback-management {
+  height: 88rpx;
+  background-color: rgb(60, 135, 202);
+  padding: 0 32rpx;
+}
+
+.prevbtn {
+  color: #fff;
+  font-size: 34rpx;
+}
+
+.managebtn {
+  color: rgb(241, 246, 250);
+  font-size: 30rpx;
+}
+
+.videolist {
+  padding: 0 20rpx;
+}
+
+.videolistItem {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgb(235, 235, 235);
+}
+
+.videoleft {
+  /* margin-right: 20rpx; */
+    width: 55rpx;
+}
+
+.noicon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 30rpx;
+  border: 1rpx solid rgb(229, 229, 229);
+  border-radius: 100%;
+}
+.noicon1 {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 30rpx;
+}
+
+.noicon1 icon {
+  width: 100%;
+}
+
+.haveicon {
+  margin-right: 30rpx;
+}
+
+/* .videomiddle {
+  width: 222rpx;
+  height: 156rpx;
+} */
+
+.videomiddle image {
+  width: 222rpx;
+  height: 156rpx;
+  margin-right: 30rpx;
+}
+
+.videoright {
+  height: 156rpx;
+  width: 100%;
+}
+
+.videotit {
+  font-size: 30rpx;
+  color: rgb(102, 102, 102);
+  margin-bottom: 23rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.videodetail {
+  margin-top: 5rpx;
+}
+
+.videodetailLeft {
+  /* width: 255rpx; */
+}
+
+.videotea {
+  color: rgb(179, 179, 179);
+  font-size: 26rpx;
+  margin-bottom: 9rpx;
+}
+
+.videocourse {
+  color: rgb(153, 153, 153);
+  font-size: 26rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.continueplay {
+  width: 136rpx;
+  height: 46rpx;
+  border: 3rpx solid rgb(60, 135, 202);
+  font-size: 26rpx;
+  color: rgb(60, 135, 202);
+  border-radius: 40rpx;
+  margin-left: 15rpx;
+}
+
+/* 底部 */
+
+.deletebox {
+  padding-left: 20rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+}
+
+.allchooceleft {
+  display: flex;
+  align-items: center;
+  width: 239rpx;
+  height: 100%;
+  font-size: 30rpx;
+  color: rgb(102, 102, 102);
+  background-color: #fff;
+}
+
+.allchoocemiddle, .allchooseright {
+  width: 250rpx;
+  height: 100%;
+  background-color: rgb(204, 204, 204);
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.allchooseright {
+  background-color: rgb(255, 62, 63);
+}

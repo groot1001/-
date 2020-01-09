@@ -1,0 +1,12 @@
+<!--pages/newpolicy/newpolicy.wxml-->
+<view class="newpolicybox">
+  <block wx:for="{{policylist}}" wx:key="{{item.id}}">
+      <view class="newpolicyitem" data-id="{{item.id}}" bindtap="topolicydetail">
+        <text class="policytit">{{item.title}}</text>
+        <view class="issuebox flex justify">
+          <text class="issuetype">{{item.catsName}}</text>
+          <text class="issuetime">{{item.createTime}}</text>
+        </view>
+      </view>
+  </block>
+</view>

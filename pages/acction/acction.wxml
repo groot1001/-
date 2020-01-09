@@ -1,0 +1,13 @@
+<!--重要通知-->
+<view class="acction-ul">
+ <view bindtap='to_acction_info' class="acction-li" wx:for="{{acction}}">
+
+  <view class="li-title">
+    <text class="dian">●</text>
+    <text class="text1">{{item.title}}</text>
+    <text class="time">{{item.time}}</text>
+  </view>
+   <text class="text-neir">{{item.neir}}<text class="shenl">...</text></text>
+ </view>  
+</view>
+

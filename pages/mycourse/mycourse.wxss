@@ -1,0 +1,165 @@
+/* pages/mycourse/mycourse.wxss */
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direaction {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+/* .nocourse{
+    display:  flex;
+  align-items:  center;
+  justify-content:  center;
+  color:  #ccc;
+  font-size:  43rpx;
+  margin-top: 20%;
+} */
+.mycoursebox {
+}
+
+.mycourselist {
+}
+
+.mycouselistItem {
+  margin-bottom: 20rpx;
+}
+
+.bigtitbox {
+  height: 78rpx;
+  background-color: rgb(229, 229, 229);
+  color: rgb(51, 51, 51);
+  font-size: 32rpx;
+  padding: 0 30rpx 0 36rpx;
+}
+
+.bigtitleft {
+  /* width: 646rpx; */
+}
+
+.bigrank {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 100%;
+  background-color: #fff;
+  margin-right: 12rpx;
+}
+
+.bigtit {
+}
+
+.showicon {
+  width: 38rpx;
+  height: 20rpx;
+}
+
+.smalllist {
+  padding: 0 20rpx;
+}
+
+.smalllistItem {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgb(235, 235, 235);
+}
+
+smalllistItemleft {
+}
+
+.leftitem {
+  width: 222rpx;
+  height: 156rpx;
+  margin-right: 29rpx;
+}
+
+.middleitem {
+  width: 330rpx;
+}
+
+.smalltit {
+  color: rgb(102, 102, 102);
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.smallrank {
+}
+
+.starnum image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.rankgrade {
+  color: rgb(60, 135, 202);
+  font-size: 26rpx;
+}
+
+.learnnum {
+  color: rgb(153, 153, 153);
+  font-size: 26rpx;
+}
+
+.rightitem {
+  color: rgb(153, 153, 153);
+  font-size: 26rpx;
+  margin-top: 8rpx;
+}
+
+@keyframes turndown {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes turnright {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.arrowdown {
+  /* transform:rotate(-90deg); */
+  animation: turndown 0.3s linear 1 forwards;
+  /* animation-fill-mode: forwards; */
+}
+
+.arrowright {
+  /* transform:rotate(-90deg); */
+  animation: turnright 0.3s linear 1 forwards;
+  /* animation-fill-mode: forwards; */
+}
+
+.hidelist {
+  display: none;
+}
+
+.showlist {
+  display: block;
+}

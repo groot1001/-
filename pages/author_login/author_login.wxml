@@ -1,0 +1,16 @@
+<!--pages/author_login/author_login.wxml-->
+<view class="authorize_login_box">
+   <view class="loginlogo">
+   <image src="{{avatarUrl}}"></image>
+   </view>
+   <view class="loginslogan">{{nickName}}</view>
+    <button wx:if="{{!author}}" open-type="getUserInfo"  bindgetuserinfo="getUserInfo" class="wxlogin">微信授权登录</button>
+    <button wx:if="{{author}}" open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber" class="wxlogin">绑定手机号获取更多免费课程</button>
+    <view class="phonelogin" bindtap="tologin">手机号登录</view>
+    
+    <view class="agreement">
+    <navigator url="/pages/index/index" open-type="switchTab" hover-class="none" style="line-height:36rpx;margin-bottom: 32rpx;font-size: 30rpx">暂不登录</navigator>
+    未注册的微信号将自动注册学乐佳账号，且同意<text class="rgbblue">注册协议</text>和<text  class="rgbblue">隐私政策</text>
+    </view>
+    <view class="copyright">三佳网络技术支持</view>
+</view>

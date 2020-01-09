@@ -1,0 +1,70 @@
+/* pages/video_list/video_list.wxss */
+
+.video_category_max{
+text-align: center;
+display: inline-block;
+font-size: 24rpx;
+/* margin-left: 70rpx; */
+width: 25%;
+line-height: 80rpx;
+white-space:nowrap;
+font-weight: bold;
+
+/* padding-right: 22rpx; */
+position: relative;
+}
+.this_selct{
+  color: #3c87ca;
+}
+.shuxian{
+position: absolute;left: 0;font-size: 20rpx;font-weight: normal;color: #000;
+}
+.video_category_max:first-child .shuxian{
+  font-size: 0;
+}
+
+.video_category_min{
+  text-align: center;
+display: inline-block;
+font-size: 24rpx;
+/* margin-left: 70rpx; */
+width: 33%;
+line-height: 60rpx;
+white-space:nowrap;
+padding: 20rpx 0;
+}
+.vcm_item{
+  width: 88%;
+  margin-left: 7%;
+  background-color: white;
+}
+
+
+.video_list{
+  display: flex;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ebebeb;
+}
+.video_list_let image{
+   width: 215rpx;
+   height: 151rpx;
+}
+.video_tit{
+  font-size: 26rpx;
+  margin-top: 12rpx;
+}
+.score{
+  font-size: 22rpx;
+  margin-top: 12rpx;
+}
+.video_list_rig{
+  width: 100%;
+  margin-left: 30rpx;
+}
+.video_list_rig_btm{
+  margin-top: 14rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+

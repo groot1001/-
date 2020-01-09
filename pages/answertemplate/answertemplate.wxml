@@ -1,0 +1,29 @@
+<!--pages/answertemplate/answertemplate.wxml-->
+<template name="myanswer">
+  <view class="gz-li" data-id="{{id}}" bindtap="todatail">
+    <view class="li1">
+      <view class="liicon">
+        <image class="img1" src='{{photo}}'></image>
+      </view>
+      <text class="name">{{userName||name}}</text>
+      <text class="time">{{createTime||createtime}}发布</text>
+    </view>
+    <text class="wenti">{{title?title:content}}</text>
+    <view class="huifu" wx:if="{{replyData&&replyData.length}}">
+      <text class="hf-blue">回复</text>
+      <text class="hf-neir">{{replyData[0].content}}</text>
+    </view>
+    <view class="huifu" wx:elif="{{!replyData&&content.length}}">
+      <text class="hf-blue">回复</text>
+      <text class="hf-neir">{{content}}</text>
+    </view>
+    <view class="li1-bot">
+      <view class='flex'>
+        <text class="text-bot">{{readNum||readnum}}阅读 · {{replyNum||replynum}}回复 · </text>
+        <view class='concernbtn'>{{isFollow==0?"关注":"取消关注"}}</view>
+      </view>
+      <text class="time time2" wx:if="{{replyData&&replyData.length>0}}">{{replyData[0].createTime}}回复</text>
+      <text class="time time2" wx:if="{{replytime&&replytime!=''}}">{{replytime}}回复</text>
+    </view>
+  </view>
+</template>

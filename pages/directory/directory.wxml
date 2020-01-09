@@ -1,0 +1,16 @@
+<!--pages/directory/directory.wxml-->
+<block wx:for="{{8}}">
+  <view class='directory_max'>
+    <view class='directory_tit'>第{{index+1}}章总论</view>
+    <view class='directory_item_bottom'>
+      <view class='dib_item'>考点个数：
+        <text style='color:#3c87ca;'>7</text>个</view>
+      <view class='dib_item'>考点热度：
+        <text style='color:#f4646f;'>371087</text>
+        <text style='color:#f4646f;' class='iconfont icon-redu'></text>
+      </view>
+    </view>
+    <view class='yuandian'></view>
+    <view style='color:#999;' class='iixy iconfont icon-xiangyou'></view>
+  </view>
+</block>

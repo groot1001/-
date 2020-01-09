@@ -1,0 +1,69 @@
+<!--pages/sendarea/sendarea.wxml-->
+<!-- 发表问题 -->
+<!-- <view class=''>
+  <radio-group class="radio-group flex" bindchange="radioChange">
+    <block wx:for="{{questionCategroyItems}}" wx:key>
+      <label class="radio ratiobox flex align">
+        <radio color='#3c87ca' value="{{item.id}}" checked="{{item.checked}}" /> {{item.name}}
+      </label>
+    </block>
+  </radio-group>
+</view> -->
+<!-- 标题输入框 -->
+<view class='titlebox'>
+  <input type='text' value='{{quetit}}' placeholder='请输入标题' class='send-tit' bindinput='titchange'></input>
+</view>
+<!-- line线条 -->
+<view class='line'></view>
+<!-- 想法输入框 -->
+<view class='feedContent'>
+  <view class='feedBack'>
+    <textarea class='feedText' name="refund_desc" value='{{quecontent}}' bindfocus="start" bindinput="textareChange" placeholder='这一刻的想法...' catchtap='start'>
+    </textarea>
+  </view>
+  <view class='addbox'>
+    <block wx:for="{{imgs}}" wx:key>
+      <view class='imgbox'>
+        <image class='addbtn' src="{{item}}" data-src="{{item}}" mode='aspectFill' bindtap="previewImage"></image>
+        <image src='../../images/send-del.png' class='del-img' bindtap='delpic' data-index="{{index}}"></image>
+      </view>
+    </block>
+    <image src='../../images/send-add.png' class='addbtn' bindtap='addbtn'></image>
+    <view class="photonum">
+      <text class="nowphontnum">{{imgs.length}}</text>
+      <text class="photoundelinde">/</text>
+      <text class="totolphontnum">6</text>
+    </view>
+  </view>
+  <!-- 模层 -->
+  <!-- <cover-view class="drawer_screen" bindtap="hideModal" wx:if="{{choose}}"></cover-view> -->
+  <!-- 拍照上传图片板块 -->
+  <!-- <cover-view class='photo-origin' wx:if="{{choose}}">
+    <cover-view class='came flex align' bindtap='takePhoto'>拍照</cover-view>
+    <cover-view class='choicepic flex align' bindtap='chooseimg'>从相册选择</cover-view>
+  </cover-view> -->
+  <!-- 发送按钮 -->
+  <view class='sendbox'>
+    <view class='feedBtn' bindtap='submitcontent'>
+      发送
+    </view>
+  </view>
+</view>
+<!-- 调用相机camera拍照板块 -->
+<view class='camerabox' wx:if="{{ photoTaken}}">
+  <camera class="controls" mode="normal" device-position="{{position}}" flash="off" binderror="error" style="width: 100%; height:{{screenheight}}px">
+    <image mode="widthFix" src="{{src}}"></image>
+    <cover-view class='canceltakephoto' bindtap='canceltakephoto'>关闭</cover-view>
+    <cover-view class='camera_bottom'>
+
+      <cover-view class='photobtn'>
+        <cover-view bindtap="camera" class='photobtn_item'></cover-view>
+      </cover-view>
+      <cover-image animation="{{spin}}" class='qiehuan' bindtap='qiehuan' src='../../images/qiehuan.png'></cover-image>
+      <cover-image class='album' bindtap='chooseimg' data-typ='true' src='../../images/album.png'></cover-image>
+    </cover-view>
+  </camera>
+  <!-- <image mode="widthFix" src="{{src}}"></image> -->
+</view>
+<!-- 预览图片 -->
+<image mode="widthFix" src="{{current}}"></image>

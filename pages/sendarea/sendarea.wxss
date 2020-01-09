@@ -1,0 +1,256 @@
+/* pages/sendarea/sendarea.wxss */
+
+page {
+  background-color: rgb(244, 245, 249);
+}
+
+.flex {
+  display: flex;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.align {
+  align-items: center;
+}
+
+.radio-group {
+  padding: 40rpx 70rpx;
+  background-color: rgb(244, 245, 249);
+  flex-wrap: wrap;
+}
+
+.ratiobox {
+  font-size: 27rpx;
+  width: 300rpx;
+  height: 68rpx;
+}
+
+ratio {
+  margin-right: 18rpx;
+}
+
+.titlebox {
+  background-color: #fff;
+  border-top: 5rpx solid rgb(244, 245, 249);
+}
+
+.send-tit {
+  font-size: 32rpx;
+  padding-top: 34rpx;
+  padding-left: 34rpx;
+  padding-bottom: 34rpx;
+}
+
+.line {
+  height: 20rpx;
+  background-color: rgb(244, 245, 249);
+}
+
+.textbox {
+  padding-top: 24rpx;
+  padding-left: 34rpx;
+}
+
+.feedBack {
+  background-color: #fff;
+  height: 400rpx;
+  padding: 24rpx 34rpx;
+  box-sizing: border-box;
+}
+
+.feedText {
+  font-size: 32rpx;
+  width: 100%;
+}
+
+.addbox {
+  background-color: #fff;
+  padding-left: 34rpx;
+  padding-bottom: 22rpx;
+  position: relative;
+}
+
+.addbtn {
+  width: 129rpx;
+  height: 131rpx;
+  margin-right: 19rpx;
+}
+
+.photonum {
+  position: absolute;
+  bottom: 22rpx;
+  right: 23rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nowphontnum {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.photoundelinde {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.totolphontnum {
+  color: rgb(153, 153, 153);
+  font-size: 30rpx;
+}
+
+.sendbox {
+  padding: 40rpx 30rpx;
+  background-color: rgb(244, 245, 249);
+}
+
+.feedBtn {
+  text-align: center;
+  background-color: rgb(60, 135, 202);
+  color: #fff;
+  padding: 25rpx;
+  border-radius: 15rpx;
+  font-size: 32rpx;
+}
+
+.del-img {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 0px;
+  top: -11px;
+}
+
+.imgbox {
+  display: inline-block;
+  position: relative;
+}
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.photo-origin {
+  width: 587rpx;
+  height: 201rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.came {
+  width: 100%;
+  height: 100rpx;
+  justify-content: center;
+  color: rgb(56, 56, 56);
+  font-size: 32rpx;
+  border-bottom: 1rpx solid rgb(231, 231, 231);
+}
+
+.choicepic {
+  width: 100%;
+  height: 100rpx;
+  justify-content: center;
+  color: rgb(56, 56, 56);
+  font-size: 32rpx;
+}
+
+/* 拍照 */
+
+.controls {
+  position: relative;
+  display: flex;
+}
+
+.camerabox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.photobtn {
+  background-color: #fff;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  bottom: 70rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photobtn_item {
+  background-color: #c0d0de;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.canceltakephoto {
+  /* text-shadow: 2rpx 2rpx 2rpx #999; */
+  color: white;
+  width: 120rpx;
+  height: 60rpx;
+  /* border-radius:100%; */
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  position: absolute;
+  font-size: 28rpx;
+  top: 22rpx;
+  left: 26rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.camera_bottom {
+  height: 240rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.qiehuan {
+  height: 80rpx;
+  width: 80rpx;
+  position: absolute;
+  bottom: 80rpx;
+  left: 120rpx;
+}
+
+.album {
+  height: 80rpx;
+  width: 80rpx;
+  position: absolute;
+  bottom: 80rpx;
+  right: 120rpx;
+}

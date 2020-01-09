@@ -1,0 +1,103 @@
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<!--答疑详情-->
+<!-- 一：问题板块 -->
+<view class='help-board'>
+  <!-- 问题 -->
+  <view class='help-tit'>{{detaillist.content}}</view>
+  <!-- 人物头像板块 -->
+  <view class='hea-name flex space'>
+    <view class='hea-left flex'>
+      <view class='hea-left-icon'>
+        <view class="liicon">
+          <image src='{{detaillist.photo}}'></image>
+        </view>
+      </view>
+      <view class='hea-left-nam'>
+        <view class='hea-name'>{{detaillist.userName}}</view>
+        <view class='hea-time flex align'>
+          <image src='../../images/answer-time.png'></image>
+          <text>{{detaillist.createTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='hea-right flex align'>
+      <view class='view-num flex align'>
+        <image src='../../images/answer-view.png'></image>
+        <text>{{detaillist.readNum}}</text>
+      </view>
+      <view class='comm-num flex align'>
+        <image src='../../images/answer-comment.png'></image>
+        <text>{{detaillist.replyNum}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{detailImg.length!=0}}" class='receiveimage'>
+    <block wx:for="{{detailImg}}" wx:key>
+      <image src="{{item}}" mode='aspectFill' data-src="{{item}}" bindtap="previewImage"></image>
+    </block>
+  </view>
+  <!-- 求助问题 -->
+  <view class='help-que'>
+    {{detaillist.subject}}</view>
+  <!-- 点赞收藏 -->
+  <view class='flex like-col'>
+    <view class='like-icon flex align' bindtap='make_zan'>
+      <image src="{{make_zan_states==0?'/images/like-b.png':'/images/like.png'}}"></image>
+      <text>{{likeNum}}</text>
+    </view>
+    <view class='col-icon flex align' bindtap='make_collect'>
+      <!-- <image src="{{make_collect_states==0?'/images/collect-b.png':'/images/collect.png'}}"></image> -->
+      <!-- <text>{{collectNum}}</text> -->
+      <image src="../../images/{{make_Follow==0?'collec-b':'collec-a'}}.png"></image>
+      <!-- <view class="iconfont icon-aixin-copy"></view> -->
+      <text class="concernedbtn">{{make_Follow==0?'关注':'取消关注'}}</text>
+    </view>
+  </view>
+</view>
+<!-- 间隔条 -->
+<view class='line'></view>
+<!-- 二：评论板块 -->
+<view wx:if='{{replydata.length!=0}}'>
+  <block wx:if="replydata.length>0" wx:for="{{replydata}}" wx:key='{{item.userId}}'>
+    <view class='comment-box'>
+      <view class='com-ban flex' data-id="{{item.userId}}">
+        <!-- 左边用户头像 -->
+        <view class='com-hea liicon'>
+          <image src='{{item.collectuserphoto}}'></image>
+        </view>
+        <!-- 右边内容 -->
+        <view class='com-right flex space'>
+          <!-- 用户名称和发表时间 -->
+          <view class='com-top flex space'>
+            <view class='com-name'>{{item.collectusername}}</view>
+            <view class='com-top-right flex align'>
+              <text class='iconfont icon-lishijilu'></text>
+              <text>{{item.createTime}}</text>
+            </view>
+          </view>
+
+          <!-- 评论内容 -->
+          <view class='com-content'>{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='nocommend' wx:else>
+  <image src='../../images/nocommend1.png'></image>
+  <text class='nocomendtxt'>暂无评论，快来抢占沙发</text>
+</view>
+<!-- 三：分享按钮 -->
+<button class='share-btn collectBox'  open-type='share' wx:if="{{write[0]+write[1] > 0}}" bindtouchmove="touchmove" catch:touchmove style="left:{{write[0]}}px;top:{{write[1]}}px;">
+  <image src="../../images/share.png" ></image>
+</button>
+<view style='height:182rpx;'></view>
+<!-- 四：发表评论 -->
+<view class='sendBox flex'>
+  <view class='sendContent'>
+    <input bindinput="bindKeyInput" value='{{content_val}}'></input>
+  </view>
+  <view class='sendBtn flex align' bindtap='submitcontent'>
+    发送
+  </view>
+</view>

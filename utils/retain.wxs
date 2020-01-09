@@ -1,0 +1,97 @@
+var filters = {
+  /**保留小数点*/
+  toFix: function(value, digit) { /**保留小数点*/
+    return value.toFixed(digit)
+  },
+  /**数组切割*/
+  toArr: function(arr, str) {
+    return arr.join(str)
+  },
+  // 字符串转数组
+  toStr: function(str1, str2) {
+    return str1.split(str2);
+  },
+  /**转换整数*/
+  toInt: function(val) {
+    return parseInt(val);
+  },
+  // id 0-1-2-3-4转字母 A-B-C-D
+  numToLetter: function(int) {
+
+    if (int != null) {
+      var len = int.length;
+
+      if (len > 1) {
+        var numarr;
+        if (typeof (int) == 'object') {
+          
+          numarr = int;
+        } else {
+          numarr = int.split(',');
+        }
+
+        var str = ''
+        for (var i = 0; i < numarr.length; i++) {
+          str += numarr[i] == '0' ? 'A,' : numarr[i] == '1' ? 'B,' : numarr[i] == '2' ? 'C,' : numarr[i] == '3' ? 'D,' : 'E,'
+        }
+        return str.substring(0, str.length - 1);
+      } else {
+        return int == '0' ? 'A' : int == '1' ? 'B' : int == '2' ? 'C' : int == '3' ? 'D' : 'E'
+      }
+    } else {
+      return '您未选择'
+    }
+
+  },
+  /**转换数字*/
+  toNumber: function(val) {
+    return Number(val);
+  },
+  //  比对查找
+  wxsFindIndex: function(arr, items) {
+    var rest = false;
+
+    if (arr.indexOf(items) != -1) {
+      rest = true;
+    }
+    return rest;
+  },
+  /**时间差*/
+  timeRub: function(this_time, past_time) {
+    var past_times = getDate(past_time).getTime(),
+      this_times = getDate(this_time).getTime(),
+      rest = this_times - past_times,
+      unit;
+    if (rest >= 1000 && rest < 60000) {
+      unit = Math.floor(rest / 1000) + '秒前';
+    } else if (rest >= 60000 && rest < 3600000) {
+      unit = Math.floor(rest / 60000) + '分钟前';
+    } else if (rest >= 3600000 && rest < 86400000) {
+      unit = Math.floor(rest / 3600000) + '小时前';
+    } else if (rest >= 86400000) {
+      unit = Math.floor(rest / 86400000) + '天前';
+      if (Math.floor(rest / 86400000) == 30) {
+        unit = '1个月前'
+      }
+      if (Math.floor(rest / 86400000) > 30) {
+        var date = getDate(past_time),
+          Y = date.getFullYear() + '-',
+          M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-',
+          D = date.getDate() + ' ';
+        unit = Y + M + D;
+      }
+    }
+    return unit;
+  },
+
+}
+module.exports = {
+  toFixs: filters.toFix,
+  toArrs: filters.toArr,
+  toNumber: filters.toNumber,
+  timeRub: filters.timeRub,
+  toInt: filters.toInt,
+  toStr: filters.toStr,
+  wxsFindIndex: filters.wxsFindIndex,
+  numToLetter: filters.numToLetter
+}

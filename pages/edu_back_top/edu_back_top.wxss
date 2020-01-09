@@ -1,0 +1,267 @@
+/* pages/edu_back_top/edu_back_top.wxss */
+.edubacktop_banner{position: relative;width:100%;height: 100%;}
+.banner_img image{
+  width: 100%;
+}
+.edu_btn{
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  bottom: 75rpx;
+  width: 90%;
+  margin-left: 5%;
+}
+.edu_entrance{
+  background-color: #fed90a;
+  color: #244647;
+  font-size: 30rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  border-radius: 31rpx;
+  width: 300rpx;
+  text-align: center; 
+}
+.tit_eud_box{
+  font-size: 46rpx;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+
+.edu_back_max{
+  padding:0 30rpx 40rpx;
+   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+.edu_back_item{
+  border: 2rpx solid #d9d9d9;
+  border-radius: 8rpx;
+  width: 31%;
+  height: 180rpx;
+  margin-top: 20rpx;
+}
+.content_text{
+  font-size: 30rpx;
+  margin-top: 16rpx;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.conditions{
+  background-color: #3c87ca;
+  color: white;
+  font-size: 24rpx;
+  text-align: center;
+  width:185rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+}
+.edu_back_item_img{
+  width: 30%;
+  margin-top: 22rpx;
+}
+.ebii image{
+height: 138rpx;
+width: 100%;
+}
+.ebii_tit{
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.ebii_kimg image{
+  height: 72rpx;
+  width: 72rpx;
+
+}
+.ebii_kimg{
+  text-align: center;
+}
+.ebii_k_tit{
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.ebii_k_txt{
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+.tiaokuang{
+  font-size: 24rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  width:47.5%;background-color: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #d9d9d9;
+  border-radius: 8rpx;
+ 
+}
+.tiaokuang image{
+ width:30rpx;
+ height: 30rpx;
+ margin:0 8rpx 0 14rpx;
+}
+
+.subheading{
+  width: 100%;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  top: 90rpx;
+}
+
+.recommend{
+  text-align: center;
+  background-color: #fff;
+  height: 270rpx;
+   width:47.5%;
+   margin-top: 30rpx;
+   border-radius: 8rpx;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommend_item image{
+  height: 127rpx;
+  width: 127rpx;
+}
+.re_item_tit{
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.re_brn{
+  margin-top: 14rpx;
+  height:45rpx;
+  line-height: 45rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+  background-color: #3c87ca;
+  padding: 0 60rpx;
+  border-radius: 22rpx;
+}
+.more_school{
+  height: 80rpx;
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  color: white;
+  background-color: #ff5901;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+.subheading_02{
+  font-size: 46rpx;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 90rpx;
+  width: 100%;
+  height: 100rpx;
+  
+}
+.teacher_lineup{
+  padding:2rpx 30rpx;
+}
+.hezhao image{
+  width: 100%;
+}
+.teacher_lineup_introduce{
+  display: flex;
+  height: 115rpx;
+  align-items: center;
+  border-bottom: 2rpx dashed #d0d5d9;
+}
+.t_l_i_num{
+  font-size: 40rpx;
+  font-weight: bold;
+  height: 65rpx;
+  width: 65rpx;
+  line-height: 65rpx;
+  text-align: center;
+  background-color: #3c87ca;
+  color: #fff;
+  border-radius: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.t_l_i_text{
+  width: 90%;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  color:#666;
+}
+
+.comment{
+  
+  padding:0 30rpx 40rpx;
+}
+
+.comment_item{
+  display: flex;
+  height: 130rpx;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: #d9d9d9 2rpx solid;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.comment_item_logo{
+  margin:0 20rpx;
+}
+.comment_item_logo image{
+  width: 98rpx;
+  height: 98rpx;
+}
+.comment_item_text{
+  position: relative;
+  font-size: 24rpx;
+  color: #666;
+}
+.comment_item_text image{
+  height: 30rpx;
+  width: 30rpx;
+}
+.see_box{
+  font-size: 22rpx;
+  color: #666;
+  position:absolute;
+  right: 22rpx;
+  bottom: 0rpx;
+}
+.select_specialty{
+  padding:0 30rpx 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.select_specialty_item{
+  font-size: 24rpx;
+  padding:12rpx 22rpx;
+  border: 2rpx solid #d9d9d9;
+  margin:5rpx;
+  border-radius: 60rpx;
+}
+.this_select{
+background-color: #3c87ca;
+color: #fff;
+border: none;
+}
+
+.gengdou{
+   font-size: 24rpx;
+  padding:12rpx 22rpx;
+color: #ff5901;
+  margin:5rpx;
+  border-radius: 60rpx;
+}

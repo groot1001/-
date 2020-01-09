@@ -1,0 +1,22 @@
+<!--pages/logining/logining.wxml-->
+<view class="loginbox">
+  <view class="logo flex align center">
+    <image src="../../images/loginlogo.png"></image>
+  </view>
+  <view class="logininput">
+    <input placeholder="手机号" class="phonenum" value="{{phonenum}}" bindinput="bindPhone"></input>
+    <input type="password" placeholder="请输入密码" class="psd" value="{{psdnum}}" bindinput="bindPsd"></input>
+  </view>
+  <view class="logincontainer">
+    <view class="loginbtn" bindtap="login">登录</view>
+    <view class="register-forget flex justify">
+      <view class="registernow" bindtap="register">快速注册</view>
+      <view class="forgetpsd" bindtap="modifypsd">忘记密码</view>
+    </view>
+    <view class="usewx flex center align" bindtap="togrant">
+      <!-- <view class="iconfont icon-weixin"></view> -->
+      <image src="../../images/weixin.png"></image>
+      <text>微信登录</text>
+    </view>
+  </view>
+</view>

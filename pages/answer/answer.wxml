@@ -1,0 +1,32 @@
+<!--答疑-->
+<import src="../answertemplate/answertemplate.wxml" />
+<scroll-view scroll-y="true" scroll-with-animation="true" bindscrolltolower="nextPage" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+  <!-- 输入框 -->
+  <view class='fixedinput'>
+    <view class='keywordsearchbox'>
+      <input value='{{keywords}}' bindblur="blurdata" placeholder='输入关键字搜索问答'></input>
+      <image src='../../images/search.png' class='searchbtn' bindtap='search'></image>
+    </view>
+  </view>
+  <view class="gz-ul" wx:if="{{dataList.length!=0}}">
+    <block wx:for="{{dataList}}" wx:key="{{index}}">
+      <!-- 使用答疑列表模板 -->
+      <template is="myanswer" data="{{...item}}"></template>
+    </block>
+
+  </view>
+  <view class='nocourse' style="margin-top: 30%;" wx:else>
+    暂无数据~
+  </view>
+</scroll-view>
+
+
+<view class='ask collectBox' bindtap='askbtn' wx:if="{{write[0]+write[1] > 0}}" bindtouchmove="touchmove" catch:touchmove style="left:{{write[0]}}px;top:{{write[1]}}px;">
+
+  <view class='ask-text'>
+    <view>
+      <image class='ask-icon' src='../../images/answer-add.png'></image>
+    </view>
+    提问
+  </view>
+</view>

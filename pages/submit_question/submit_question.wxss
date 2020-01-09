@@ -1,0 +1,117 @@
+/* pages/submit_question/submit_question.wxss */
+
+.sq_top {
+  height: 174rpx;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 2rpx #ededed;
+}
+
+.score_num {
+  font-size: 60rpx;
+  color: #f7741b;
+  margin-top: 26rpx;
+}
+
+.score_txt {
+  font-size: 32rpx;
+  color: #999;
+}
+
+.top_infos {
+  display: flex;
+  justify-content: space-around;
+  height: 100rpx;
+  padding: 24rpx 0;
+  text-align: center;
+  border-bottom: 12rpx solid #ededed;
+}
+
+.ti_item_top {
+  font-size: 32rpx;
+}
+
+.ti_item_btm {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.toppic-content {
+  padding: 2rpx 30rpx;
+}
+
+.toppic-types {
+  font-size: 32rpx;
+  /* font-weight: bolder; */
+  margin-top: 42rpx;
+}
+
+.toppic-number {
+  overflow: hidden;
+  margin-top: 16rpx;
+}
+
+.toppic-number-item {
+  font-size: 32rpx;
+  margin-top: 12rpx;
+  height: 66rpx;
+  width: 66rpx;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 66rpx;
+  float: left;
+  margin-left: 14rpx;
+}
+
+.def_css {
+  border: solid #e6e6e6 2rpx;
+  color: #666;
+}
+
+.tuer_css {
+  background-color: #1bc297;
+  border: none;
+  color: white;
+}
+
+.false_css {
+  background-color: #ff594d;
+  border: none;
+  color: white;
+}
+
+.waingClass {
+  margin-top: 12rpx;
+  background-color: #ffa04e;
+  border: none;
+  color: white;
+  font-size: 24rpx !important;
+}
+
+.bottom_sq {
+  display: flex;
+  height: 100rpx;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 32rpx;
+  color: #3c87ca;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 2rpx #e4e4e4 solid;
+  box-shadow: 0 -6rpx 8rpx #f2f6f9;
+  line-height: 100rpx;
+  background-color: #fff;
+}
+
+/*  */
+
+.bql_items {
+  text-align: center;
+  width: 49.5%;
+  border-right: 1rpx solid #e4e4e4;
+}
+
+/* .bql_items:first-child{
+  border-right: 1rpx solid #ededed;
+} */

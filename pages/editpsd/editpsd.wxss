@@ -1,0 +1,49 @@
+/* pages/editpsd/editpsd.wxss */
+
+page {
+  background-color: rgb(244, 245, 249);
+}
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direaction {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.forgetsec {
+  margin-top: 40rpx;
+}
+
+.forgetsecinput {
+  height: 114rpx;
+  background-color: #fff;
+  font-size: 34rpx;
+  padding: 0 30rpx;
+}
+
+.next {
+  height: 96rpx;
+  margin: 40rpx 30rpx 80rpx 30rpx;
+  background-color: rgb(60, 135, 202);
+  border-radius: 10rpx;
+  font-size: 38rpx;
+  color: #fff;
+}

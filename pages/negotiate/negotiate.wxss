@@ -1,0 +1,21 @@
+/* pages/negotiate/negotiate.wxss */
+.negotiatebox{
+    padding: 40rpx 20rpx;
+}
+.negotiateInfo{
+   font-size: 30rpx;
+   color: rgb(102,102,102);
+}
+.negotiatelist{
+    color: rgb(102,102,102);
+    font-size: 30rpx;
+}
+.negotiateitem{
+
+}
+.negotiateitemtit{
+  color: rgb(0,0,0)
+}
+.negotiateitemcontent{
+
+}

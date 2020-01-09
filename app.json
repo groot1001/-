@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    
+   "pages/author_login/author_login",
+    "pages/edu_back_top/edu_back_top",
+    "pages/class_plan/class_plan",
+    "pages/lijibaoming/lijibaoming",
+    "pages/reportclass/reportclass",
+    "pages/reportclass_details/reportclass_details",
+    "pages/video_list/video_list",
+    "pages/video_details/video_details",
+    "pages/video_details_comment/video_details_comment",
+    "pages/teacherInfo/teacherInfo",
+    "pages/teacherList/teacherList",
+    "pages/zzsc/zzsc",
+    "pages/reset_register_template/reset_register_template",
+    "pages/testpsd/testpsd",
+    "pages/search/search",
+    "pages/directory/directory",
+    "pages/question/question",
+    "pages/myanswer/myanswer",
+    "pages/questionbank/questionbank",
+    "pages/questionbank_list/questionbank_list",
+    "pages/submit_question/submit_question",
+    "pages/answertemplate/answertemplate",
+    "pages/newpolicydetail/newpolicydetail",
+    "pages/newpolicy/newpolicy",
+    "pages/registersetting/registersetting",
+    "pages/register/register",
+    "pages/editpsd/editpsd",
+    "pages/logining/logining",
+    "pages/mycollect/mycollect",
+    "pages/myplay/myplay",
+    "pages/mycourse/mycourse",
+    "pages/aboutus/aboutus",
+    "pages/negotiate/negotiate",
+    "pages/answer/answer",
+    "pages/sendarea/sendarea",
+    "pages/answer-det/answer-det",
+    "pages/yjfk/yjfk",
+    "pages/gkjl/gkjl",
+    "pages/help-zx/help-zx",
+    "pages/help/help",
+    "pages/acction/acction",
+    "pages/acction-xq/acction-xq",
+    "pages/wdgz/wdgz",
+    "pages/wode/wode",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/web_view/web_view",
+    "pages/wxPayPage/wxPayPage"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "课程",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "selectedColor": "#3c87ca",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程",
+        "iconPath": "/images/footer1-2.png",
+        "selectedIconPath": "/images/footer1-1.png"
+      },
+      {
+        "pagePath": "pages/questionbank/questionbank",
+        "text": "题库",
+        "iconPath": "/images/footer2-1.png",
+        "selectedIconPath": "/images/footer2-2.png"
+      },
+      {
+        "pagePath": "pages/answer/answer",
+        "text": "答疑",
+        "iconPath": "/images/footer3-1.png",
+        "selectedIconPath": "/images/footer3-2.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "/images/footer4-1.png",
+        "selectedIconPath": "/images/footer4-2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

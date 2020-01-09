@@ -1,0 +1,13 @@
+/* miniprogram/pages/wdgz/wdgz.wxss */
+.gz-ul{padding: 0 30rpx;}
+.gz-ul .gz-li{display: flex;flex-direction: column;padding:40rpx 0 20rpx 0;border-bottom: 1px solid #ebebeb;}
+.gz-ul .gz-li .li1{height:72rpx;width:100%;line-height: 72rpx;}
+.gz-ul .gz-li .li1 .img1{width:72rpx;height:72rpx;float: left;}
+.gz-ul .gz-li .li1 .name{font-size: 30rpx;color:#666666;float: left;margin-left:40rpx;}
+.gz-ul .gz-li  .time{font-size: 24rpx;color:#cccccc;float: right;}
+.gz-ul .gz-li .wenti{font-size: 28rpx;color:#333333;margin-top:20rpx;}
+.gz-ul .gz-li .huifu .hf-blue{padding:5rpx 10rpx ;font-size: 24rpx;color:#fff;background: #3c87ca;border-radius: 10rpx;}
+.gz-ul .gz-li .huifu .hf-neir{font-size: 24rpx;color:#666666;margin-left:10rpx;}
+.gz-ul .gz-li .li1-bot{width:100%;margin-top:30rpx;}
+.gz-ul .gz-li .li1-bot .text-bot{font-size: 24rpx;color:#999999;}
+.gz-ul .gz-li .li1-bot .time2{margin-top:14rpx;}

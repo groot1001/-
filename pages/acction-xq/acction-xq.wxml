@@ -1,0 +1,6 @@
+<!--通知列表-->
+<view class="acc-xq">
+ <text class="title">恭喜您已注册账户成功</text>
+ <text class="time">昨天 19:00</text>
+ <text class="neir">年结后不能随便调整存货的年初数量。一般存货的数量是在进行盘点以后，发现实存数与账面数不一致的时候才需要调整，那么这时候的调整就是根据公司盘存情况做盘盈或者盘亏的处理</text>
+</view>

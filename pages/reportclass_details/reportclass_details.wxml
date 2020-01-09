@@ -1,0 +1,154 @@
+<view class='reportclass_details_img'>
+  <image src='../../images/reportclass_details_img.jpg'></image>
+  <view class='rdi_tit'>第52期开班\n\r\n\r\n\r\n\r\n\r\n\r\n\r上课时间：每周二四六上课</view>
+</view>
+
+<view class="help-daoh swiper-tab">
+  <view class="daoh-li {{currentTab==0 ? 'this_tab' : ''}}" data-current="0" bindtap="swichNav">
+    详情
+  </view>
+  <view class="daoh-li {{currentTab==1 ? 'this_tab' : ''}}" data-current="1" bindtap="swichNav">
+    师资
+  </view>
+  <view class="daoh-li {{currentTab==2 ? 'this_tab' : ''}}" data-current="2" bindtap="swichNav">
+    点评
+  </view>
+</view>
+
+<swiper class="swiper" duration="300" style="height: {{winHeight-90}}px" current="{{currentTab}}" bindchange="swiperChange">
+  <!-- 详情 -->
+  <swiper-item>
+    <scroll-view scroll-y='true' style='height:{{winHeight-90}}px;'>
+
+      <view class='scroll_item_top'>
+        <view class='tit_rep_details_tit'>真账实操-零基础培训班</view>
+        <view class='tit_rep_details_deputy_tit'>【本课程已全面适配2018年度初级资格考试大纲】</view>
+        <view class='tit_rep_details_text'>初级会计正在取代会计从业成为行业入门证书！通过率更高 的直播班型，拿证+实操，助你高薪就业！
+        </view>
+        <view class='peoplenumber'>
+          1314523人学习
+        </view>
+      </view>
+
+      <view class='scroll_item_head'>
+        <view class='scroll_item_head_tit'>特色服务</view>
+        <view class='service_content'>
+          <block wx:for="{{['答疑','质保期','VIP视频','VIP题库','管家服务']}}">
+            <view class='service_content_item'>
+              <image src='../../images/send-sel.png'></image>
+              {{item}}
+            </view>
+          </block>
+        </view>
+        <view class='scroll_item_head_tit' style='padding-top:12rpx;'>服务保障</view>
+        <view class='service_content_text'>● 质保期协议</view>
+      </view>
+      <view class='scroll_item_conttent'>
+        <view class='scroll_item_conttent_tit'>
+          <text class='shuxian'></text> 班级介绍
+        </view>
+
+        <text class='class_jieshao'>
+          <text class='class_jieshao_tit'>内容：</text>\n\r备课+结构化面试+试讲答辩面试礼仪+常见问题解决 \n\r1、一轮集体面授课程，加量身定制专属课程辅导计划，预约时间 一对一指导。\n\r 2、详细指导备课、结构化面试、试讲、答辩技巧、教案、面试礼 节、服装、语言、音调、姿态、等面试常见问题。\n\r <text class='class_jieshao_tit'>课时：</text> \n\r共24课时  \n\r<text class='class_jieshao_tit'>授课时间： </text> \n\r集中4天
+        </text>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+  <!-- 师资 -->
+  <swiper-item>
+
+    <scroll-view scroll-y='true' style='height:{{winHeight-90}}px;'>
+      <block wx:for="{{teachers}}" wx:for-item="t">
+
+        <view class="teach-ul" wx:if="{{index%2 ==0}}">
+
+          <view class="teach-li">
+            <image class="img1" src='{{t.logo}}'> </image>
+            <view class="teach-xq">
+              <view class="name">
+                <text class="text1">{{t.name}}</text>
+                <text class="shu">|</text>
+                <text class="text2"> {{t.grade}}</text>
+              </view>
+              <text class="blue-text3">{{t.school}}</text>
+              <text class="blue-text3">{{experience}}</text>
+              <view class="fengge">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">授课风格：</text>
+              </view>
+              <text class="help-xg">{{t.style}}</text>
+              <view class="geyan">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">教学宗旨（格言）：</text>
+              </view>
+              <text class="help-xg">{{t.tenet}}</text>
+            </view>
+            <button class="zixunbtn">点击咨询专家</button>
+          </view>
+        </view>
+        <view class="teach-ul" wx:else>
+
+          <view class="teach-li">
+
+            <view class="teach-xq" style='margin-left:0rpx'>
+              <view class="name">
+                <text class="text1">{{t.name}}</text>
+                <text class="shu">|</text>
+                <text class="text2"> {{t.grade}}</text>
+              </view>
+              <text class="blue-text3">{{t.school}}</text>
+              <text class="blue-text3">{{experience}}</text>
+              <view class="fengge">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">授课风格：</text>
+              </view>
+              <text class="help-xg">{{t.style}}</text>
+              <view class="geyan">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">教学宗旨（格言）：</text>
+              </view>
+              <text class="help-xg">{{t.tenet}}</text>
+            </view>
+            <image style='margin-left:12rpx;' class="img1" src='{{t.logo}}'> </image>
+            <button class="zixunbtn">点击咨询专家</button>
+          </view>
+        </view>
+      </block>
+      <view class='join_box'>
+        <view class='join'>
+          <text class='join_1'>加入我们</text>
+          <text class='join_2'>“师资团队”</text>
+        </view>
+      </view>
+
+    </scroll-view>
+
+
+  </swiper-item>
+  <!-- 点评 -->
+  <swiper-item>
+    <scroll-view scroll-y='true' style='height:{{winHeight-90}}px;'>
+     <!-- 学员案例 -->
+    <scroll-view scroll-y='true' style='height:{{winHeight-46}}px;'>
+      <view class="neir-xx">
+        <view class="xx-li" wx:for="{{xxneir}}" wx:key="{{index}}">
+          <image src='{{item.img}}'></image>
+          <view class="xx-name">学员：{{item.name}} </view>
+          <text class="text1">2017年初级学霸  |  考试分数： <text>{{item.fs}}</text> </text>
+          <view class="xx-talk">{{item.talk}}</view>
+        </view>
+      </view>
+      <view class='join_box' >
+        <view class='join'>
+          <text class='join_1'>下一个就是</text>
+          <text class='join_2'>"你"</text>
+        </view>
+      </view>
+    </scroll-view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<button open-type='contact' class='contact2'>
+  <text style='font-size:68rpx;' class='iconfont icon-xiaoxi'></text> 咨询
+</button>

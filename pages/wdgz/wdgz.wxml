@@ -1,0 +1,19 @@
+<!--我的关注-->
+<view class="gz-ul">
+  <view class="gz-li" wx:for="{{gz}}" wx:key="{{index}}">
+     <view class="li1">
+       <image class="img1" src='{{item.img}}'></image>
+       <text class="name">{{item.name}}</text>
+       <text class="time">{{item.fabu}}</text>
+     </view>
+     <text class="wenti">{{item.wenti}}</text>
+     <view class="huifu">
+        <text class="hf-blue">回复</text>
+        <text class="hf-neir">{{item.huifu}}</text>
+     </view>
+     <view class="li1-bot">
+      <text class="text-bot">{{item.yd}}阅读 · {{item.hf}}回复 · 取消关注</text>
+      <text class="time time2">{{item.hftime}}</text>
+     </view>
+  </view>
+</view>

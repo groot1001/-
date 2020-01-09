@@ -1,0 +1,33 @@
+<!--pages/teacherList/teacherList.wxml-->
+<block wx:for='{{teacherList}}' wx:for-item="t" wx:for-index="tind" wx:key="{{tind}}">
+  <view  class="teacher_item">
+    <view class="teacher_item_top">
+      <view class="teacher_item_top_let">
+        <image src="{{media_www}}{{t.teacherHImg}}" mode="aspectFill"></image>
+      </view>
+      <view class="teacher_item_top_rig">
+        <view class="teacherName">
+          <text class="tname">{{t.teacherName}}</text>
+          <text class="Grade">{{t.teacherType}}</text>
+        </view>
+        <view class="school">{{t.attendingSchool}}</view>
+        <view class="exp">{{t.sketch}}</view>
+      </view>
+    </view>
+    <view class="teachingStyle">
+      <view class="teachingStyle_label">
+        <text>●</text>\r\n授课风格</view>
+      <view class="teachingStyle_content">
+        {{t.teacherStyle}}
+      </view>
+    </view>
+    <view class="teachingStyle">
+      <view class="teachingStyle_label">
+        <text>●</text>\r\n教学宗旨</view>
+      <view class="teachingStyle_content">
+        {{t.teacherWork}}
+      </view>
+    </view>
+    <navigator url='/pages/teacherInfo/teacherInfo?tid={{t.teacherId}}' class="kf_btn">查看专家更多信息</navigator>
+  </view>
+</block>

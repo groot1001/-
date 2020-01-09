@@ -1,0 +1,53 @@
+<!--pages/wxPayPage/wxPayPage.wxml-->
+<view class="wxPayPageTop">
+  <view class="avatarUrl">
+    <image src="{{avatarUrl}}"></image>
+  </view>
+  <view class="userInfo">
+    <view class="nickName">{{nickName}}</view>
+    <view class="phone">{{phone}}</view>
+  </view>
+  <image class="vip" src="../../images/wode-vip.png"></image>
+</view>
+
+<view class="course_info">
+  <view class="course_info_box">
+    <view class="course_img">
+      <image src="{{course_img}}"></image>
+    </view>
+    <view class="ctitle_txt">
+      <view class="ctitle">{{ctitle}}</view>
+      <view class="chapter">章数：{{chapter}}章</view>
+      <view class="studyNum">学习人数：{{studyNum}}人</view>
+    </view>
+  </view>
+  <view class="tips">
+    适用范围：微信小程序、安卓(apk)、苹果(app)均可看
+  </view>
+  <view class="coruse_pic">
+    <view class="price">
+      <view class="price-item" style="color:#FFFFE0">
+        <text>全套课程\n\r享8折优惠</text>
+      </view>
+      <view class="price-item">
+        <text class="price_goods">￥{{cousePicDetails.price}}\n\r<text class="marketPrice">原价{{cousePicDetails.marketPrice}}</text></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view bindtap="payBtn" class="payBtn">
+  <text>立即支付</text>
+</view>
+
+<view catchtap="make_modal" wx:if="{{open_modal}}" class="modal_box" style="height:{{winHeight}}px;">
+  <view class="modal_item">
+    <view class="modal_item_content">
+      <text class="modal_tit">温馨提示！</text>
+      <text class="modal_txt">由于您未使用过授权登录\r\n请授权用户信息</text>
+    </view>
+    <button open-type="getUserInfo"  bindgetuserinfo="getUserInfo" class="modal_item_bottom">
+      授权一下
+    </button>
+  </view>
+  <text catchtap="make_modal" class="gb iconfont icon-guanbi"></text>
+</view>

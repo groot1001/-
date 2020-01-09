@@ -1,0 +1,47 @@
+<!--pages/video_list/video_list.wxml-->
+<!-- 大分类 -->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<scroll-view scroll-with-animation="true" scroll-left="0" scroll-x="true" style='width:100%;white-space: nowrap;' scroll-into-view="t_{{this_id}}">
+  <view class='video_category_max {{this_id=="0"?"this_selct":""}}' bindtap='findstore' data-vcid='0' id="t_0" data-indexmax='-1'>
+    <text class='shuxian '>|</text> 全部分类
+  </view>
+  <block wx:for="{{video_list_kz}}" wx:for-item="cmitem">
+
+    <view bindtap='findstore' id="t_{{cmitem.vcid_m}}" data-vcid='{{cmitem.vcid_m}}' class='video_category_max {{this_id==cmitem.vcid_m?"this_selct":""}}' data-indexmax='{{index}}'>
+      <text class='shuxian'>|</text> {{cmitem.video_category_max}}
+    </view>
+  </block>
+</scroll-view>
+
+<!-- 小分类 -->
+
+<scroll-view scroll-with-animation="true" scroll-x="true" style='width:100%;white-space: nowrap;background-color:#f4f5f9;' scroll-into-view="t_{{this_id_min}}">
+  <!-- <view class='video_category_min {{this_id_min=="0"?"this_selct":""}}' bindtap='findstore_min' data-vcid='0' id="t_0" data-indexmin='-1'>
+    <view class='vcm_item'>全部</view>
+  </view> -->
+  <block wx:for="{{chlid_cate}}" wx:for-item="item" wx:for-index="index">
+
+    <view bindtap='findstore_min' id="t_{{index+1}}" data-indexmin='{{index}}' data-vcid='{{index+1}}' class='video_category_min {{this_id_min==index+1?"this_selct":""}}'>
+      <view class='vcm_item'>{{item.video_category_min}}</view>
+    </view>
+  </block>
+</scroll-view>
+
+<view>
+  <block wx:for="{{video_chlids}}" wx:for-item="item">
+    <view bindtap='to_see_video' class='video_list'>
+      <view class='video_list_let'>
+        <image src='{{item.img}}.jpg'></image>
+      </view>
+      <view class='video_list_rig'>
+        <view class='video_tit'>{{item.video_tit}}</view>
+        <view class='score'>
+          <text wx:for="{{item.score}}" style='color:#3c87ca;font-size:22rpx;' class='iconfont icon-xingxing'></text>{{item.score}}</view>
+        <view class='video_list_rig_btm'>
+          <view class='author'>{{item.author}}</view>
+          <view class='viewing_number'>{{item.viewing_number}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

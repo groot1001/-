@@ -1,0 +1,60 @@
+<!--pages/myplay/myplay.wxml-->
+<scroll-view scroll-y="true" scroll-with-animation="true" bindscrolltolower="nextPage" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+  <view class="myplaybox">
+    <view class="turnback-management flex-between">
+      <text class="backbtn"></text>
+      <view>
+        <view class="managebtn" bindtap="manage">{{ismanage==false?"管理":"完成"}}</view>
+        <!-- <view wx:else class="managebtn" bindtap="finishmanage">完成</view> -->
+      </view>
+    </view>
+    <view class="videolist" style="padding-bottom:{{ismanage==true?'90rpx':'0'}}">
+      <view wx:if="{{videolist.length>0}}">
+        <block wx:for="{{videolist}}" wx:key="{{item}}">
+          <view class="videolistItem flex" data-ind="{{index}}" data-check="{{item.checked}}" data-id="{{item.id}}" bindtap="singleselect" data-img="http://www.xuelejia.com/{{item.image}}" data-courstype="{{item.curriculumType}}" data-vname='{{item.categoryName}}' >
+            <view class="videoleft" wx:if="{{ismanage}}" data-id="{{item.id}}">
+              <block wx:if="{{item.checked==false}}">
+                <view class="noicon"></view>
+              </block>
+              <block wx:else>
+              <view class="noicon1">
+                <icon type="success" class="haveicon" size="20" color="rgb(60,135,202)" />
+              </view>
+              </block>
+            </view>
+            <view class="videomiddle">
+              <image src="http://www.xuelejia.com/{{item.image}}" mode="aspectFill"></image>
+            </view>
+            <view class="videoright">
+              <text class="videotit">{{item.categoryName}}</text>
+              <view class="videodetail flex-between">
+                <view class="videodetailLeft flex-direction">
+                  <text class="videotea">主讲：<text>{{item.anthor}}</text></text>
+                  <text class="videocourse">{{item.name}}</text>
+                </view>
+                <view class="continueplay flex-center">
+                  继续学习
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="nocourse" wx:else>暂无播放记录</view>
+      </view>
+      <view class="deletebox flex" wx:if="{{ismanage}}">
+        <view class="allchooceleft" bindtap='selectAll'>
+          <block wx:if="{{selectAllStatus==false}}">
+            <view class="noicon"></view>
+            <text>全选</text>
+          </block>
+          <block wx:else>
+            <icon type="success" class="haveicon" size="20" color="rgb(60,135,202)" />
+            <text>取消全选</text>
+          </block>
+        </view>
+        <view class="allchoocemiddle flex-center" bindtap="cancel">取消</view>
+        <view class="allchooseright flex-center" bindtap="deleteplay">删除</view>
+      </view>
+    </view>
+</scroll-view>

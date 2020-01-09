@@ -1,0 +1,50 @@
+<!--pages/aboutus/aboutus.wxml-->
+
+<view class="aboutbox">
+  <view class="mybrandbox flex center direction align">
+    <image src="../../images/aboutUsLogo.png"></image>
+    <view class="mybrandinfo">
+      <text class="mybrandname">学乐佳会计</text>
+      <text class="mybrandversion">V1.8</text>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="xlj-dialog">
+    <view class="dialogItem flex justify align">
+      <view class="Item-left">
+        学乐佳会计
+      </view>
+      <navigator style="color:#3c87ca" url="/pages/web_view/web_view" hover-class="none" class="Item-right">
+        www.xuelejia.com
+      </navigator>
+    </view>
+    <view class="dialogItem flex justify align">
+      <view class="Item-left">
+        微信公众号
+      </view>
+      <view class="Item-right">
+       xuelejia6
+      </view>
+    </view>
+    <view class="dialogItem flex justify align">
+      <view class="Item-left">
+        服务热线
+      </view>
+      <view bindtap="call" style="color:#0fcba3" class="Item-right">
+       138-2655-2124
+      </view>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="xljrule flex justify align" bindtap="turnto">
+   <text class="rule-left">学乐佳会计用户协议</text>
+   <view class="rule-right">
+    <image src="../../images/prevbtn.png"></image>
+   </view>
+  </view>
+ 
+</view>
+ <view class="footer">
+     <text class="footer-text">三佳网络技术支持</text>
+  </view>
+<!-- <official-account></official-account> 公众组件 -->

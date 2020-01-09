@@ -1,0 +1,86 @@
+.help-daoh{display: flex;flex-direction: row;}
+.help-daoh .daoh-li{padding:22rpx 0 24rpx 0;border-bottom:1rpx solid #e5e5e5;position: relative;z-index: 999;}
+.help-daoh .daoh-li .daol-li1{border-right:1px solid #e5e5e5;height:44rpx;line-height: 44rpx;font-size: 24rpx;padding:0 42rpx;}
+.help-daoh .daoh-li .daol-li2{height:44rpx;line-height: 44rpx;font-size: 24rpx;padding:0 42rpx;}
+.help-daoh .on{color: #3c87ca;border-bottom:1px solid #3c87ca;}
+/* 学乐佳简介 */
+.neir-jj{padding:0 30rpx 0 30rpx;display: flex;flex-direction: column;margin-bottom:60rpx;
+}
+.neir-jj .text1{font-size: 28rpx;color:#666666;margin-top:40rpx;line-height: 40rpx;}
+.neir-jj image{width:640rpx;height:524rpx;}
+/* 学员案例 */
+.neir-xx{padding: 0 30rpx;display: flex;flex-direction: column;margin-bottom:60rpx;}
+.neir-xx .xx-li{display: flex;flex-direction: column;text-align: center;margin-top:28rpx;}
+.neir-xx .xx-li image{width:174rpx;height:174rpx;margin:0 auto;}
+.neir-xx .xx-li .xx-name{background: #53a1e9;width:180rpx;height:46rpx;line-height: 46rpx;margin:0 auto;margin-top:-20rpx;font-size:24rpx;color:#fff; }
+.neir-xx .xx-li .text1{font-size: 24rpx;color:#333333;margin-top:24rpx;}
+.neir-xx .xx-li .text1 text{color:#e7100c;}
+.neir-xx .xx-li .xx-talk{padding:20rpx 30rpx;background: #f4f5f9;text-align: left;font-size:24rpx;color:#666666;line-height: 40rpx;margin-top:22rpx;}
+/* 师资力量 */
+.teach-ul{padding:30rpx;display: flex;flex-direction: column;background: #f4f5f9;box-sizing: border-box;}
+.teach-ul .teach-li{display: flex;flex-direction: row;background: #fff;padding:20rpx 0rpx 20rpx 20rpx;flex-wrap: wrap;}
+.teach-ul .teach-li .img1{width:278rpx;height:390rpx;}
+.teach-ul .teach-li .teach-xq{display: flex;flex-direction: column;width:365rpx;margin-left:28rpx;}
+.teach-ul .teach-li .teach-xq .name{margin-bottom: 20rpx;}
+.teach-ul .teach-li .teach-xq .name .text1{font-size: 38rpx;}
+.teach-ul .teach-li .teach-xq .name .shu{font-size: 34rpx;margin-left:16rpx;}
+.teach-ul .teach-li .teach-xq .name .text2{font-size: 28rpx;color:#333333;}
+.teach-ul .teach-li .blue-text3{font-size: 24rpx;color:#0186d1;}
+.teach-ul .teach-li .teach-xq .help-dou{width:26rpx;height:24rpx;}
+.teach-ul .teach-li .teach-xq .help-fg{font-size: 28rpx;color:#333333;margin-left:10rpx;}
+.teach-ul .teach-li .teach-xq .geyan{margin-top:20rpx;}
+.teach-ul .teach-li .teach-xq .fengge{margin-top:20rpx;}
+.teach-ul .teach-li .teach-xq .help-xg{font-size: 24rpx;color:#666666;}
+.teach-ul .teach-li .zixunbtn{margin-top:20rpx;border-radius: 50rpx;background: #ff5901;width:288rpx;height:60rpx;line-height: 60rpx;font-size: 28rpx;color:#fff; }
+.join_box{
+  height: 122rpx;
+  background-color: #f4f5f9;
+  padding-top: 66rpx;
+}
+.join{
+  
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  background-color: white;
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height:50rpx;
+  border-radius: 25rpx;
+}
+.join_1{
+color: #666;
+}
+.join_2{
+color: #3c87ca;
+font-weight: bold;
+}
+.school_address{
+ padding-right: 30rpx;
+  padding-top: 50rpx;
+  position: relative;
+  border-bottom: 2rpx solid #f2f2f2;
+  padding-bottom: 16rpx;
+}
+.content{
+  margin-left:100rpx;
+ 
+  
+}
+.yuan_dian{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 50rpx;
+  background-color: #3c87ca;
+  border-radius: 100%;
+  left: 30rpx;
+}
+.com_name{
+  font-size: 32rpx;
+}
+.addres{
+  font-size: 26rpx;
+  color:#9a9a9a;
+  margin-top: 22rpx;
+}

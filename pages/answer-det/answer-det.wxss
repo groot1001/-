@@ -1,0 +1,409 @@
+/* miniprogram/pages/answer-det/answer-det.wxss */
+
+.flex {
+  display: flex;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.align {
+  align-items: center;
+}
+
+.line {
+  height: 12rpx;
+  background-color: rgb(244, 245, 249);
+}
+
+.help-board {
+  height: auto;
+  /* padding: 40rpx 38rpx 80rpx 20rpx; */
+  padding: 40rpx 38rpx 0 20rpx;
+}
+
+.help-tit {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 44rpx;
+}
+
+.hea-name {
+}
+
+.hea-left {
+}
+
+.hea-left-icon {
+}
+.liicon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+background: url(https://www.xuelejia.com/Upload/Banner/201805251049212011.jpg) no-repeat center;
+  background-size: 72rpx 72rpx;
+  float: left;
+  margin-right: 19rpx;
+}
+.hea-left-icon image {
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 19rpx;
+  border-radius: 100%;
+}
+
+.hea-left-nam {
+}
+
+.hea-name {
+  font-size: 24rpx;
+  color: rgb(60, 135, 202);
+  margin-bottom: 13rpx;
+}
+
+.hea-time {
+}
+
+.hea-time image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+}
+
+.hea-time text {
+  font-size: 24rpx;
+  color: rgb(153, 153, 153);
+}
+
+.hea-right {
+  float: right;
+}
+
+.view-num {
+  width: 176rpx;
+  height: 62rpx;
+  background-color: rgb(245, 245, 245);
+  border: 1rpx solid rgb(220, 220, 220);
+  border-radius: 82rpx;
+  margin-right: 18rpx;
+  justify-content: center;
+}
+
+.view-num image {
+  width: 34rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.comm-num {
+  width: 176rpx;
+  height: 62rpx;
+  background-color: rgb(245, 245, 245);
+  border: 1rpx solid rgb(220, 220, 220);
+  border-radius: 82rpx;
+  justify-content: center;
+}
+
+.comm-num image {
+  width: 26rpx;
+  height: 28rpx;
+  margin-right: 9rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.align {
+  align-items: center;
+}
+
+.defaColor {
+  color: #333;
+}
+
+.defaSize {
+  font-size: 30rpx;
+}
+
+.defaImg {
+  width: 100%;
+  height: 100%;
+}
+
+.defaBottom {
+  border-bottom: 20rpx solid #eee;
+}
+
+.boxSizi {
+  box-sizing: border-box;
+}
+
+button::after {
+  border: none;
+}
+
+.orderList {
+  padding: 35rpx 20rpx 20rpx 20rpx;
+}
+
+.orderTime {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.orderInfo {
+  padding: 20rpx 10rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.orderImg {
+  width: 145rpx;
+  height: 145rpx;
+  margin-right: 20rpx;
+}
+
+.orderCount {
+  flex-direction: column;
+  padding: 7rpx 0;
+  width: 70%;
+}
+
+.pinkPrize {
+  color: #f97070;
+  font-weight: 500;
+  margin-right: 15rpx;
+}
+
+.shopPrize {
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.orderInfoDeta {
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+
+.orderInfoDeta label {
+  margin: 0;
+}
+
+.orderFoot {
+  margin-top: 15rpx;
+}
+
+.orderStatus {
+  color: #ff3c50;
+}
+
+.orderOperation {
+  padding: 15rpx 20rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #ff3c50;
+  line-height: 30rpx;
+}
+
+.receiveimage {
+  margin-top: 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.receiveimage image {
+  width: 216rpx;
+  height: 188rpx;
+  margin-right: 24rpx;
+  margin-bottom: 28rpx;
+}
+
+.receiveimage image:nth-child(3n) {
+  margin-right: 0;
+}
+
+.help-que {
+  font-size: 29rpx;
+  color: rgb(102, 102, 102);
+  padding: 42rpx 0rpx 40rpx 0rpx;
+  line-height: 44rpx;
+}
+
+.like-col {
+  /* margin-bottom: 80rpx; */
+  margin-bottom: 49rpx;
+}
+
+.like-icon {
+  margin-right: 60rpx;
+}
+
+.like-icon image {
+  width: 38rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.like-icon text, .col-icon text {
+  /* color: rgb(60, 135, 202); */
+  font-size: 32rpx;
+}
+
+/* .concernedbtn {
+  color: rgb(60, 135, 202)!important;
+  font-size: 32rpx;
+} */
+
+.col-icon {
+  color: rgb(102, 102, 102);
+}
+
+.col-icon image {
+  width: 42rpx;
+  height: 45rpx;
+  margin-right: 10rpx;
+}
+
+.col-icon text {
+   font-size: 30rpx;
+  color: rgb(102, 102, 102);
+}
+
+/* .change-b{
+color: rgb(102, 102, 102);
+}
+.change-a{
+  color: rgb(60, 135, 202);
+} */
+
+.com-ban {
+  padding: 20rpx 16rpx 20rpx 20rpx;
+  border-bottom: 1rpx solid rgb(242, 242, 242);
+}
+
+.com-left {
+}
+
+.com-hea {
+}
+
+.com-hea image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  margin-right: 19rpx;
+}
+
+.tit-top {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.com-name {
+  font-size: 26rpx;
+}
+
+/* 哪有课件样式 */
+
+.com-content {
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+}
+
+.com-right {
+  flex-direction: column;
+  width: 100%;
+}
+
+.com-top-right {
+  text-align: right;
+}
+
+/* 时钟样式 */
+
+.com-top-right image {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.com-top-right text {
+  font-size: 24rpx;
+  color: rgb(181, 181, 181);
+  margin-left: 10rpx;
+}
+
+.nocommend {
+  min-height: 400rpx;
+}
+
+.share-btn {
+  position: fixed;
+  top: 209rpx;
+  right: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 0;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.share-btn image{
+ width: 100rpx;
+  height: 100rpx;
+}
+.sendBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(234, 234, 234);
+  padding: 0 20rpx;
+}
+
+.sendContent {
+  width: 70%;
+  margin-right: 20rpx;
+}
+
+.sendContent input {
+  border-radius: 8rpx;
+  background-color: #fff;
+  height: 86rpx;
+  padding-left: 12rpx;
+}
+
+.sendBtn {
+  height: 86rpx;
+  background-color: rgb(60, 135, 202);
+  color: #fff;
+  width: 152rpx;
+  justify-content: center;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+
+.nocommend {
+  text-align: center;
+  margin-top: 18%;
+  color: #ccc;
+  font-size: 51rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.nocomendtxt{
+  font-size: 29rpx;
+}
+
+.nocommend image {
+  width: 320rpx;
+  height: 300rpx;
+}

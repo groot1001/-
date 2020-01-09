@@ -1,0 +1,49 @@
+/* pages/newpolicy/newpolicy.wxss */
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direaction {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+.newpolicybox {
+  padding: 0 20rpx;
+}
+
+.newpolicyitem {
+  padding: 29rpx 0 22rpx 0;
+  border-bottom: 2rpx solid rgb(235, 235, 235);
+  font-size: 32rpx;
+}
+
+.policytit {
+  color: rgb(51, 51, 51);
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.issuebox {
+  color: rgb(204,204,204);
+}
+
+.issuetype {
+}
+
+.issuetime {
+}

@@ -1,0 +1,11 @@
+<!--pages/newpolicydetail/newpolicydetail.wxml-->
+<view class="policydetailbox">
+    <!-- <text class="policydetailtit">一般纳税人销售废旧材料的税率是多少？</text>
+    <text class="policydetailtime">2018-01-16 17:29</text>
+    <text class="policydetailcontent">年结后不能随便调整存货的年初数量。一般存货的数量是在进行盘点以后，发现实存数与账面数不一致的时候才需要调整，那么这时候的调整就是根据公司盘存情况做盘盈或者盘亏的处理。</text> -->
+    <text class="policydetailtit">{{newpolicydetailList.title}}</text>
+    <text class="policydetailtime">{{newpolicydetailList.createtime}}</text>
+    <view class="policydetailcontent">
+        <rich-text nodes="{{newpolicydetailList.content}}"></rich-text>
+    </view>
+</view>

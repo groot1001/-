@@ -1,0 +1,104 @@
+/* pages/teacherList/teacherList.wxss */
+
+.teacher_item {
+  height: 100%;
+  padding: 22rpx;
+  border-bottom: 10rpx solid #f2f6f9;
+}
+.teacher_item:last-child{
+border-bottom:none;
+}
+
+.teacher_item_top {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.teacher_item_top_let {
+  padding-left: 20rpx;
+}
+
+.teacher_item_top_let image {
+  width: 286rpx;
+  height: 286rpx;
+  border-radius: 100%;
+}
+
+.teacher_item_top_rig {
+  /* padding-left: 22rpx; */
+}
+
+.tname {
+  position: relative;
+  font-size: 44rpx;
+  padding-right: 22rpx;
+}
+
+.tname::before {
+  content: '';
+  position: absolute;
+  width: 2rpx;
+  height: 42rpx;
+  top: 16rpx;
+  right: 0;
+  border-right: 1rpx solid #3c87ca;
+}
+
+.Grade {
+  font-size: 30rpx;
+  padding-left: 22rpx;
+  color: #3c87ca;
+  font-weight: bold;
+}
+
+.school,.exp {
+  margin-top: 22rpx;
+  padding:0 12rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  color: #333;
+  width: 316rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  background-color: #e5f2fe;
+  /* border-right-color: #0266fd;
+  border-left-color: #fe5a03; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-right: 4rpx solid #0266fd;
+  border-left: 4rpx solid #fe5a03;
+}
+
+.teachingStyle{
+padding-left: 20rpx;
+margin-top: 30rpx;
+}
+.teachingStyle_label{
+  font-size: 28rpx;
+  color: #333;
+}
+.teachingStyle_label text{
+  color: #ff5901;
+  
+}
+.teachingStyle_content{
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 12rpx;
+}
+.kf_btn{
+  width: 619rpx;
+  margin: 40rpx auto;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #ff5901;
+  border-radius: 35rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+}

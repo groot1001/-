@@ -1,0 +1,9 @@
+/* miniprogram/pages/acction/acction.wxss */
+.acction-ul{display: flex;flex-direction: column;padding:0 30rpx;}
+.acction-ul .acction-li{display: flex;flex-direction: row;flex-wrap: wrap;padding:30rpx 0 30rpx 0;border-bottom:1px solid #e2e2e2; }
+.acction-ul .acction-li .li-title{width:100%;}
+.acction-ul .acction-li .dian{color:#3c87ca;font-size: 45rpx;}
+.acction-ul .acction-li .text1{font-size: 32rpx;color:#333333;margin-left:20rpx;}
+.acction-ul .acction-li .time{font-size: 24rpx;color:#999999;float: right;margin-top:10rpx;}
+.acction-ul .acction-li .text-neir{font-size: 28rpx;color:#666666;margin-top:30rpx;}
+.acction-ul .acction-li .shenl{float:right;margin-right:20rpx;}

@@ -1,0 +1,166 @@
+/* miniprogram/pages/answer/answer.wxss */
+@import "../answertemplate/answertemplate.wxss";
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.justifycenter {
+  justify-content: center;
+}
+
+.gz-ul {
+  padding: 0 30rpx;
+  margin-top: 108rpx;
+}
+
+.fixedinput {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.keywordsearchbox {
+  padding: 18rpx 23rpx;
+  background-color: rgb(244, 245, 249);
+  position: relative;
+}
+
+.keywordsearchbox input {
+  /* height: 72rpx; */
+  background-color: #fff;
+  padding: 21rpx 80rpx 23rpx 21rpx;
+  font-size: 30rpx;
+}
+
+.keywordsearchbox .searchbtn {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  margin:auto;
+  top: 0;
+  bottom: 0;
+  right: 30rpx;
+  cursor: pointer;
+}
+
+/* .gz-ul .gz-li {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0 20rpx 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.gz-ul .gz-li .li1 {
+  height: 72rpx;
+  width: 100%;
+  line-height: 72rpx;
+}
+
+.gz-ul .gz-li .li1 .img1 {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  float: left;
+}
+
+.gz-ul .gz-li .li1 .name {
+  font-size: 30rpx;
+  color: #666;
+  float: left;
+  margin-left: 40rpx;
+}
+
+.gz-ul .gz-li  .time {
+  font-size: 24rpx;
+  color: #ccc;
+  float: right;
+}
+
+.gz-ul .gz-li .wenti {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.gz-ul .gz-li .huifu .hf-blue {
+  padding: 5rpx 10rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #3c87ca;
+  border-radius: 10rpx;
+}
+
+.gz-ul .gz-li .huifu .hf-neir {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+
+.gz-ul .gz-li .li1-bot {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.gz-ul .gz-li .li1-bot .text-bot {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.gz-ul .gz-li .li1-bot .concernbtn {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.concernbtn1 {
+  background-color: #3c87ca;
+  color: #fff;
+  border-radius: 4rpx;
+  padding: 5rpx;
+}
+
+.gz-ul .gz-li .li1-bot .time2 {
+  margin-top: 14rpx;
+} */
+
+.nocounts {
+  padding:30rpx;
+  margin-top: 108rpx;
+  text-align:center;
+}
+
+/* 提问按钮样式 */
+
+.ask {
+  position: fixed;
+  right: 31rpx;
+  z-index: 999;
+  top: 220rpx;
+  background-color: rgb(99, 158, 211);
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20rpx rgba(7, 0, 2, 0.25);
+}
+
+.ask-icon {
+  width: 37rpx;
+  height: 36rpx;
+}
+
+.ask-text {
+  font-size: 26rpx;
+  color: #fff;
+  
+}

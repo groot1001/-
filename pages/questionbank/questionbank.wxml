@@ -1,0 +1,131 @@
+<!--pages/questionbank/questionbank.wxml-->
+<view class='questionbank_root'>
+  <!-- 大类列表 -->
+  <scroll-view scroll-with-animation="true" scroll-left="0" scroll-x="true" style='width:100%;white-space: nowrap;' scroll-into-view="t_{{this_id}}">
+    <block wx:for="{{maxClass}}" wx:for-item='maxItem' wx:for-index='maxIndex' wx:key="{{maxIndex}}">
+      <view bindtap='findstore' id="t_{{maxItem.id}}" data-vcid='{{maxItem.id}}' class='video_category_max {{maxcClassIndex==maxIndex ? "this_selct":""}}' data-indexmax='{{maxIndex}}'>{{maxItem.name}}</view>
+    </block>
+
+  </scroll-view>
+
+  <!-- 小类列表 -->
+  <scroll-view scroll-with-animation="true" scroll-x="true" style='width:100%;white-space: nowrap;background-color:#f4f5f9;' scroll-into-view="t_{{this_id_min}}">
+
+    <block wx:for="{{maxClass[maxcClassIndex].courseCategoryData}}" wx:for-item='minItem' wx:for-index='minIndex' wx:key="{{minIndex}}">
+
+      <view bindtap='findstore_min' id="t_{{minItem.id}}" data-indexmin='{{minIndex}}' data-vcid='{{minItem.id}}' class='video_category_min {{minClassIndex==minIndex?"this_selct":""}}'>
+        <view class='vcm_item'>{{minItem.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <blcok wx:for="{{minClass}}" wx:for-item='item' wx:for-index='index' wx:key="{{index}}">
+    <view class='ques-item' bindtap='to_questionbank_list' data-tit="{{item.name}}" data-id="{{item.id}}">
+      <view class='qi_left'>
+        <view class='tit_label'>
+          <image src='../../images/yj{{index+1}}.png'></image>
+        </view>
+        <view class='tit_num num_color_{{index+1}}'>{{index+1}}</view>
+      </view>
+      <view class='conten'>
+        <view class='conten_tit_max'>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='conten_tit_min'>
+          <text>{{item.description||''}}</text>
+        </view>
+      </view>
+      <view class='rig'>
+        <view class='rig_btn rig_btn{{index+1}}'>马上练习</view>
+      </view>
+    </view>
+  </blcok>
+
+  <!--<view class='ques-item ' bindtap='to_questionbank_list' data-tit="经济法基础练习题库" data-id="122">
+    <view class='qi_left'>
+      <view class='tit_label'>
+        <image src='../../images/yj2.png'></image>
+      </view>
+      <view class='tit_num num_color_2'>2</view>
+
+    </view>
+    <view class='conten'>
+      <view class='conten_tit_max'>
+        <text>经济法基础练习题库</text>
+      </view>
+      <view class='conten_tit_min'>
+        <text>同步2019新大纲练习题</text>
+      </view>
+    </view>
+    <view class='rig'>
+      <view  class='rig_btn rig_btn2'>马上练习</view>
+    </view>
+  </view>
+  <view class='ques-item 'bindtap='to_questionbank_list' data-tit="零基础入门练习题" data-id="750">
+    <view class='qi_left'>
+      <view class='tit_label'>
+        <image src='../../images/yj3.png'></image>
+      </view>
+      <view class='tit_num num_color_3'>3</view>
+
+    </view>
+    <view class='conten' >
+      <view class='conten_tit_max'>
+        <text>零基础入门练习题</text>
+      </view>
+      <view class='conten_tit_min'>
+        <text>2019年新大纲练习题</text>
+      </view>
+    </view>
+    <view class='rig'>
+      <view  class='rig_btn rig_btn3'>马上练习</view>
+    </view>
+  </view>
+  <view class='ques-item 'bindtap='to_questionbank_list' data-tit="零基础入门练习题" data-id="773">
+    <view class='qi_left'>
+      <view class='tit_label'>
+        <image src='../../images/yj1.png'></image>
+      </view>
+      <view class='tit_num num_color_1'>4</view>
+
+    </view>
+    <view class='conten' >
+      <view class='conten_tit_max'>
+        <text>初级会计实务练习题库</text>
+      </view>
+      <view class='conten_tit_min'>
+        <text>2020年新大纲练习题</text>
+      </view>
+    </view>
+    <view class='rig'>
+      <view  class='rig_btn rig_btn1'>马上练习</view>
+    </view>
+  </view> -->
+</view>
+
+
+
+<view class='questionbank_bottom'>
+  <official-account class='official'></official-account>
+</view>
+<!-- <view class='questionbank_bottom'>
+  <button open-type="contact" class='qb_item'>
+    <text class='qbi_text1'>想做更多题库？</text>
+    <text class='qbi_text2'>请下载</text>
+    <text class='qbi_text3'>“学乐佳会计APP”</text>
+  </button>
+</view> -->
+
+
+<view catchtap="to_questionbank_list" wx:if="{{open_modal}}" class="modal_box" style="height:{{winHeight}}px;">
+  <view class="modal_item">
+    <view class="modal_item_content">
+      <text class="modal_tit">温馨提示！</text>
+      <text class="modal_txt">该功能正在维护中!请前往App做题~</text>
+    </view>
+    <button open-type="contact" catchtap="to_questionbank_list" class="modal_item_bottom">
+      马上去做题
+    </button>
+  </view>
+  <text catchtap="to_questionbank_list" class="gb iconfont icon-guanbi"></text>
+</view>

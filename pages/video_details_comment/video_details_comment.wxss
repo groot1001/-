@@ -1,0 +1,64 @@
+/* pages/video_details_comment/video_details_comment.wxss */
+
+.my_to_comment_top{
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 110rpx;
+  padding: 40rpx 0rpx  50rpx  0rpx;
+  border-bottom: 10rpx solid #f4f5f9;
+}
+
+.difficulty_box{
+  display: flex;
+  width: 100%;
+  font-size: 24rpx;
+  color: #666666;
+  /* justify-content: space-evenly; */
+   justify-content: space-between;
+}
+.difficulty_box:after, .difficulty_box::before {
+  content: '';
+  display: block;
+}
+.difficulty_item{
+  width: 200rpx;
+  height: 60rpx;
+  border: 2rpx solid #dddddd;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+}
+.icon_text{
+  padding-left: 12rpx;
+}
+.icon_ic{
+  color: #999999!important;
+}
+.comment_textarea,.qq,.btn{
+  width: 85%;
+  border: 1rpx solid #eee;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+  padding: 12rpx;
+  font-size: 30rpx;
+}
+.qq{
+border: none;
+background-color: #f5f5f5;
+height: 72rpx;
+}
+.btn{
+  width: 88%;
+  border: none;
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.this_sle{
+  color: #3c87ca!important;
+    border: 2rpx solid #3c87ca;
+}
+.this_sle text{
+   color: #3c87ca!important;
+}

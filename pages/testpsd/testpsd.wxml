@@ -1,0 +1,11 @@
+<!--pages/testpsd/testpsd.wxml-->
+<import src="../reset_register_template/reset_register_template.wxml" />
+<view class="forgerpsd">
+  <template is="resetregister" data= data="{{...datatemp}}"></template>
+  <view class="editpsd">
+    <view class="forgetsec">
+      <input type="password" placeholder="设置6位及6位以上密码" value="{{newpsd}}" bindinput="bindnewpsd" class="forgetsecinput"></input>
+    </view>
+    <view class="next flex align center" bindtap="postnewpsd">完成</view>
+  </view>
+</view>

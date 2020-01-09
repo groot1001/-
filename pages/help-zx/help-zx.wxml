@@ -1,0 +1,142 @@
+<!--帮助中心-->
+
+<view class="help-daoh swiper-tab">
+  <view class="daoh-li {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+    <view class="daol-li1" data-current="0">学乐佳简介</view>
+  </view>
+  <view class="daoh-li {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+    <view class="daol-li1" data-current="1">学员案例</view>
+  </view>
+  <view class="daoh-li {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+    <view class="daol-li1" data-current="2">师资力量</view>
+  </view>
+  <view class="daoh-li {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">
+    <view class="daol-li2" data-current="3">全国分校</view>
+  </view>
+</view>
+
+<swiper class="swiper" duration="300" style="height: {{winHeight-46}}px" current="{{currentTab}}" bindchange="swiperChange">
+
+  <swiper-item>
+    <!-- 学乐佳简介 -->
+    <scroll-view scroll-y='true' style='height:{{winHeight-46}}px;'>
+      <view class="neir-jj">
+        <text class="text1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深圳学乐佳会计服务有限公司创立于2003年，是深圳市首批依法成立和最具影响力的专业财税代理机构之一。 历经十载，学乐佳在业务规模、执业能力及服务水平等方面取得了长足的发展，截止2014年底服务客户数已达5912家，全年实现营业收入891.12万元。</text>
+        <image src='../../images/help-address.jpg'></image>
+        <text class="text1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学乐佳现有专业会计人员四十八名，其中执业注册会计师十五名，下设会计部，税务部，工商部，业务部，行政部，财务部，企划部七大部门，客户遍布香港及珠三角地区，涵盖化工，机械、纺织、家具、餐饮等各个行业。</text>
+        <text class="text1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在行业竟争日趋激烈的今天，学乐佳全体员工始终秉承【诚信、勤勉、不懈】的原则，以【为客户提供安全可靠的企业财税整体解决方案】为使命，致力成为全国首屈一指、备受尊崇的专业服务机构。</text>
+        <text class="text1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过税务、财务、法律等专业人士组成的团队创建与客户共同成长、共同辉煌的战略合作伙伴关系，为客户带来持续的价值增长。</text>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <!-- 学员案例 -->
+    <scroll-view scroll-y='true' style='height:{{winHeight-46}}px;'>
+      <view class="neir-xx">
+        <view class="xx-li" wx:for="{{xxneir}}" wx:key="{{index}}">
+          <image src='{{item.img}}'></image>
+          <view class="xx-name">学员：{{item.name}} </view>
+          <text class="text1">2017年初级学霸  |  考试分数： <text>{{item.fs}}</text> </text>
+          <view class="xx-talk">{{item.talk}}</view>
+        </view>
+      </view>
+      <view class='join_box' >
+        <view class='join'>
+          <text class='join_1'>下一个就是</text>
+          <text class='join_2'>"你"</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <!-- 师资力量 -->
+    <scroll-view scroll-y='true' style='height:{{winHeight-46}}px;'>
+      <block wx:for="{{teachers}}" wx:for-item="t">
+
+        <view class="teach-ul" wx:if="{{index%2 ==0}}">
+
+          <view class="teach-li">
+            <image class="img1" src='{{t.logo}}'> </image>
+            <view class="teach-xq">
+              <view class="name">
+                <text class="text1">{{t.name}}</text>
+                <text class="shu">|</text>
+                <text class="text2"> {{t.grade}}</text>
+              </view>
+              <text class="blue-text3">{{t.school}}</text>
+              <text class="blue-text3">{{experience}}</text>
+              <view class="fengge">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">授课风格：</text>
+              </view>
+              <text class="help-xg">{{t.style}}</text>
+              <view class="geyan">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">教学宗旨（格言）：</text>
+              </view>
+              <text class="help-xg">{{t.tenet}}</text>
+            </view>
+            <button class="zixunbtn">点击咨询专家</button>
+          </view>
+        </view>
+        <view class="teach-ul" wx:else>
+
+          <view class="teach-li">
+
+            <view class="teach-xq" style='margin-left:0rpx'>
+              <view class="name">
+                <text class="text1">{{t.name}}</text>
+                <text class="shu">|</text>
+                <text class="text2"> {{t.grade}}</text>
+              </view>
+              <text class="blue-text3">{{t.school}}</text>
+              <text class="blue-text3">{{experience}}</text>
+              <view class="fengge">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">授课风格：</text>
+              </view>
+              <text class="help-xg">{{t.style}}</text>
+              <view class="geyan">
+                <image class="help-dou" src='../../images/help-dou.png'></image>
+                <text class="help-fg">教学宗旨（格言）：</text>
+              </view>
+              <text class="help-xg">{{t.tenet}}</text>
+            </view>
+            <image style='margin-left:12rpx;' class="img1" src='{{t.logo}}'> </image>
+            <button class="zixunbtn">点击咨询专家</button>
+          </view>
+        </view>
+      </block>
+      <view class='join_box'>
+        <view class='join'>
+          <text class='join_1'>加入我们</text>
+          <text class='join_2'>“师资团队”</text>
+        </view>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y='true' style='height:{{winHeight-46}}px;'>
+      <block wx:for="{{school_adders}}" wx:for-item="sitem">
+        <view  bindtap='go_nav' data-lat='{{sitem.lat}}' data-lng='{{sitem.lng}}' data-address='{{sitem.adderss}}' class='school_address'>
+          <view class='yuan_dian'></view>
+          <view class='content'>
+            <view class='com_name'>{{sitem.name}}</view>
+            <view class='addres'>
+             {{sitem.adderss}}
+            </view>
+          </view>
+        </view>
+      </block>
+        <view class='join_box' style='height:66rpx;padding'>
+        <view class='join'>
+          <text class='join_1'>更多校区，敬请关注</text>
+          <text class='join_2'>"学乐佳"</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,14 @@
+<!--pages/registersetting/registersetting.wxml-->
+<view class="registersetting">
+  <view class="registerinput">
+    <view class="phonepart">
+      <input placeholder="2-6个字符" class="phonenum" value="{{nickname}}" bindinput="bindnickname"></input>
+      <text class="phonetxt">昵称</text>
+    </view>
+    <view class="phonepart">
+      <input placeholder="不少于6位" type="password" class="password" value="{{pwd}}" bindinput="bindpsd"></input>
+      <text class="psdtxt">密码</text>
+    </view>
+  </view>
+  <view class="next flex align center" bindtap="finishregister">完成</view>
+</view>

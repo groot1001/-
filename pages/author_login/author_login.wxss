@@ -1,0 +1,72 @@
+/* pages/author_login/author_login.wxss */
+
+.authorize_login_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 44rpx 0 44rpx;
+}
+
+.loginlogo {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 5rpx;
+  margin-bottom: 21rpx;
+}
+.loginlogo image{
+  width: 100%;
+  height: 100%;
+}
+.loginslogan {
+  color: rgb(159, 159, 159);
+  margin-bottom: 100rpx;
+}
+
+.wxlogin {
+  width: 100%;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #0095f6;
+  margin-bottom: 34rpx;
+  font-size: 36rpx;
+}
+
+.phonelogin {
+  width: 100%;
+  height: 88rpx;
+  border-radius: 50rpx;
+  background-color: #fff;
+  border: 2rpx solid rgb(204, 204, 204);
+  color: rgb(102, 102, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  margin-bottom: 34rpx;
+}
+
+.agreement {
+  font-size: 26rpx;
+  color: rgb(159, 159, 159);
+  padding: 0 20rpx;
+  text-indent: 2;
+  text-align: center;
+}
+
+.rgbblue {
+  color: rgb(84, 143, 212);
+}
+
+.copyright {
+  font-size: 24rpx;
+  color: rgb(204, 204, 204);
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-bottom: 15rpx;
+  width: 90%;
+  margin-left: 5%;
+}

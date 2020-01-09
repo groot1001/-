@@ -1,0 +1,76 @@
+<!--pages/lijibaoming/lijibaoming.wxml-->
+<view class='ljbm_top'>
+  <view class='ljbm_top_bg'>
+    <image src='../../images/ljbmbg.jpg'></image>
+  </view>
+  <view class='ljbm_top_text'>
+    <view class='ljbm_top_text_top'>赠送会员，抢先观看</view>
+    <view class='ljbm_top_text_bottom ljbm_top_text_bottom_first'>
+      <text style='font-size:21rpx;color:#ffff00;' class='iconfont icon-xingxing'></text>
+      <text class='ljbm_top_text_bottom_item'>优质课程</text>
+      <text style='font-size:21rpx;color:#ffff00;' class='iconfont icon-xingxing star'></text>
+      <text class='ljbm_top_text_bottom_item'>免费下载</text>
+    </view>
+    <view class='ljbm_top_text_bottom'>
+      <text style='font-size:21rpx;color:#ffff00;' class='iconfont icon-xingxing'></text>
+      <text class='ljbm_top_text_bottom_item'>个人定制</text>
+      <text style='font-size:21rpx;color:#ffff00;' class='iconfont icon-xingxing star'></text>
+      <text class='ljbm_top_text_bottom_item'>免费答疑</text>
+    </view>
+  </view>
+</view>
+<view class='vip_tq'>
+  会员特权：（适用于手机端，PC端）
+</view>
+
+<view class='vip_tq_content'>
+  <view class='vtc_item'>
+    <view class='vtc_item_box'>
+      <image src='../../images/yzkc.jpg'></image>
+      <view class='vtc_item_box_btm'>
+       <view class='vtc_item_box_tit'>优质课程</view>
+        <view class='vtc_item_box_txte'>
+          为你量身打造专属优质课程
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='vtc_item'>
+    <view class='vtc_item_box'>
+      <image src='../../images/xiangshang.jpg'></image>
+      <view class='vtc_item_box_btm'>
+        <view class='vtc_item_box_tit'>线上线下搭配</view>
+        <view class='vtc_item_box_txte'>线上学习，线下作题</view>
+      </view>
+    </view>
+  </view>
+  <view class='vtc_item'>
+    <view class='vtc_item_box'>
+      <image src='../../images/youzhi.jpg'></image>
+      <view class='vtc_item_box_btm'>
+        <view class='vtc_item_box_tit'>每天直播课</view>
+        <view class='vtc_item_box_txte'>金牌老师每天与你相约学习</view>
+      </view>
+    </view>
+  </view>
+  <view class='vtc_item'>
+    <view class='vtc_item_box'>
+      <image src='../../images/zhibo.jpg'></image>
+      <view class='vtc_item_box_btm'>
+        <view class='vtc_item_box_tit'>课程</view>
+        <view class='vtc_item_box_txte'>全套课程，从基础到精通</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='tqmsg'>
+   手机端使用权都可永久享用
+</view>
+
+<view class='page_bottom'>
+ <button class='page_bottom_btn'  open-type='contact'>
+ <text style='font-size:46rpx;margin-top:4rpx;' class='iconfont icon-xiaoxi'></text><text>立即咨询</text>
+ </button>
+  
+</view>

@@ -1,0 +1,5 @@
+/* miniprogram/pages/help/help.wxss */
+.help-ul{padding:0rpx 50rpx;display: flex;flex-direction: column;}
+.help-ul .help-li{margin-top:50rpx;display: flex;flex-direction: column;}
+.help-ul .help-li .text1{font-size: 30rpx;color:#333333;font-weight: bold;}
+.help-ul .help-li .text2{font-size: 27rpx;color:#666666;margin-top:30rpx;}

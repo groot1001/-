@@ -1,0 +1,78 @@
+/* pages/registersetting/registersetting.wxss */
+
+page {
+  background-color: rgb(244, 245, 249);
+}
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direaction {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.registerinput {
+  width: 750rpx;
+  height: 228rpx;
+  padding: 0 30rpx;
+  font-size: 34rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+}
+
+.phonepart {
+  position: relative;
+}
+
+.phonenum {
+  height: 114rpx;
+  border-bottom: 2rpx solid rgb(245, 245, 245);
+  padding-left: 91rpx;
+}
+
+.phonetxt {
+  color: rgb(51, 51, 51);
+  font-size: 38rpx;
+  position: absolute;
+  top: 32rpx;
+}
+
+.password {
+  height: 114rpx;
+  border-bottom: 2rpx solid rgb(245, 245, 245);
+  padding-left: 91rpx;
+}
+
+.psdtxt {
+  color: rgb(51, 51, 51);
+  font-size: 38rpx;
+  position: absolute;
+  top: 32rpx;
+}
+
+.next {
+  height: 96rpx;
+  margin: 40rpx 30rpx 80rpx 30rpx;
+  background-color: rgb(60, 135, 202);
+  border-radius: 10rpx;
+  font-size: 38rpx;
+  color: #fff;
+}

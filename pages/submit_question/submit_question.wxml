@@ -1,0 +1,70 @@
+<!--pages/submit_question/submit_question.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+
+<view class='sq_top'>
+  <view class='score_num'>{{filters.toFixs(total_score,1)}}</view>
+  <view class='score_txt'>得分</view>
+</view>
+<view class='top_infos'>
+  <view class='ti_item'>
+    <view class='ti_item_top'>{{filters.toFixs(sum_total_score,1)}}</view>
+    <view class='ti_item_btm'>总分(分)</view>
+  </view>
+  <view class='ti_item'>
+    <view class='ti_item_top'>{{correct_rate}}%</view>
+    <view class='ti_item_btm'>正确率</view>
+  </view>
+  <view class='ti_item'>
+    <view class='ti_item_top'>{{sq_time}}</view>
+    <view class='ti_item_btm'>用时(分)</view>
+  </view>
+</view>
+
+
+
+  <view class='toppic-content'>
+    <view class='toppic-types' wx:if="{{toppic_1.length>0}}">
+      一、单项选择题（{{toppic_1.length}}题，每题{{filters.toFixs(toppic_1[0].questionscore,1)}}分）
+    </view>
+    <view class='toppic-number'>
+      <block wx:for="{{toppic_1}}" wx:for-item="titem">
+        <view   data-tys='single' class='toppic-number-item {{titem.istrue==1?"tuer_css":titem.istrue==2?"waingClass":"false_css"}}'>
+          {{titem.istrue==2?'未做':index+1}}
+        </view>
+      </block>
+    </view>
+
+    <view class='toppic-types' wx:if="{{toppic_2.length>0}}">
+      二、多项选择题（{{toppic_2.length}}题，每题{{filters.toFixs(toppic_2[0].questionscore,1)}}分）
+    </view>
+    <view class='toppic-number'>
+      <block wx:for="{{toppic_2}}" wx:for-item="titem">
+        <view  data-tys='single' class='toppic-number-item {{titem.istrue==1?"tuer_css":titem.istrue==2?"waingClass":"false_css"}}'>
+          {{titem.istrue==2?'未做':index+1}}
+        </view>
+
+      </block>
+
+    </view>
+    <view class='toppic-types' wx:if="{{toppic_3.length>0}}">
+      三、判断题（{{toppic_3.length}}题，每题{{filters.toFixs(toppic_3[0].questionscore,1)}}分）
+    </view>
+    <view class='toppic-types' wx:if="{{toppic_4.length>0}}">
+      三、判断题（{{toppic_4.length}}题，每题{{filters.toFixs(toppic_4[0].questionscore,1)}}分）
+    </view>
+
+    <view class='toppic-number'>
+      <block wx:for="{{toppic_4}}" wx:for-item="titem">
+        <view  class='toppic-number-item {{titem.istrue==1?"tuer_css":titem.istrue==2?"waingClass":"false_css"}}'>
+         {{titem.istrue==2?'未做':index+1}}
+        </view>
+       
+      </block>
+    </view>
+  </view>
+
+<view style='height:100rpx;'></view>
+<view class='bottom_sq'>
+  <view class='bql_items' bindtap='to_parse' data-tys='err'>错题解析</view>
+  <view bindtap='to_parse'  data-tys='all' class='bql_items'>全部解析</view>
+</view>

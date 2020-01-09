@@ -1,0 +1,5 @@
+/* miniprogram/pages/acction-xq/acction-xq.wxss */
+.acc-xq{padding:50rpx 30rpx 0 30rpx;display: flex;flex-direction: column;text-align: center;}
+.acc-xq .title{font-size: 36rpx;color:#333333;}
+.acc-xq .time{color:#999999;font-size: 24rpx;margin-top:20rpx;}
+.acc-xq .neir{font-size: 30rpx;color:#666666;text-align: left;margin-top:34rpx;line-height: 50rpx;}

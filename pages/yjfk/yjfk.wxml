@@ -1,0 +1,44 @@
+<!--意见反馈-->
+<view class="fkfl">
+ <text class="text1">反馈分类</text>
+</view>
+<!-- 选择列表 -->
+<radio-group class="choose-ul" bindchange="radioChange">
+  <label class="cho-li" wx:for="{{problems}}">
+    <radio color="#3c87ca" class='radio' value="{{item.value}}" checked="{{item.checked}}" />
+    <text class="text1">{{item.value}}</text>
+  </label>
+</radio-group>
+
+<!-- <view class="choose-ul">
+  <view class="cho-li">
+   <image src="../../images/hui-o.png"></image>
+   <text class="text1">课程反馈</text>
+  </view>
+  <view class="cho-li">
+   <image src="../../images/hui-o.png"></image>
+   <text class="text1">题库反馈</text>
+  </view>
+  <view class="cho-li">
+   <image src="../../images/hui-o.png"></image>
+   <text class="text1">播放反馈</text>
+  </view>
+  <view class="cho-li">
+   <image src="../../images/hui-o.png"></image>
+   <text class="text1">使用反馈</text>
+  </view>
+  <view class="cho-li">
+   <image src="../../images/hui-o.png"></image>
+   <text class="text1">其他反馈</text>
+  </view>
+</view> -->
+<!-- 问题和意见 -->
+<view class="fkfl">
+ <text class="text1">问题和意见</text>
+</view>
+<!-- 输入框 -->
+<view class="shurk">
+  <input placeholder='描述您遇到的问题和意见，配上截图更好哦！'></input>
+</view>
+<!-- 提交 -->
+<button>提交</button>

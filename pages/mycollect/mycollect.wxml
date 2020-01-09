@@ -1,0 +1,115 @@
+<!--pages/mycollect/mycollect.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<view class="mycollectbox">
+  <!-- 管理按钮板块 -->
+  <view class="turnback-management flex align justify">
+    <text class="backbtn"></text>
+    <view>
+      <view class="managebtn" bindtap="manage">{{(ismanage||ismanage1)==false?"管理":"完成"}}</view>
+    </view>
+  </view>
+  <!-- 切换视频收藏和题目收藏 -->
+  <view class="collect-nav flex">
+    <!-- <view class="video-nav flex align center {{catagorystatus?'nav-bottom':''}}" bindtap="switchToVideo">视频</view> -->
+    <!-- <view class="navline"></view>
+    <view class="que-nav flex align center {{catagorystatus?'':'nav-bottom'}}" bindtap="switchToQue">题目</view> -->
+  </view>
+  <!-- 我的视频收藏板块 -->
+  <view class="mycollectlist" wx:if="{{catagorystatus}}">
+    <view wx:if="{{myvideoList.length>0}}">
+      <block wx:for="{{myvideoList}}" wx:key="mycourseitem">
+        <view class="mycouselistItem flex align" data-id="{{item.videoid}}" data-img="http://www.xuelejia.com/{{item.image}}" bindtap="singleselect" data-vname="{{item.title}}">
+          <!--左边删除按钮 -->
+          <view class="videoleft" wx:if="{{ismanage}}">
+            <block wx:if="{{!item.checked}}">
+              <view class="noicon"></view>
+            </block>
+            <block wx:else>
+              <view class="noicon1">
+                <icon type="success" class="haveicon" size="20" color="rgb(60,135,202)" />
+              </view>
+            </block>
+          </view>
+          <view class="smalllistItem flex justify">
+            <!-- 中间图片和介绍 -->
+            <view class="flex justify">
+              <view class="leftitembox">
+                <image src="http://www.xuelejia.com/{{item.image}}" class="leftitem"></image>
+              </view>
+              <view class="middleitem">
+                <text class="smalltit">{{item.title}}</text>
+                <view class="smallrank flex align">
+                  <view class="starnum flex align">
+                    <!-- 全星 -->
+                    <image id="{{index+1}}" src="../../images/star-b.png" wx:for="{{filters.toInt(item.star)}}" wx:key="index"></image>
+                    <!-- 半星 -->
+                    <image id="{{index+1}}" src="../../images/star-c.png" wx:for="{{5-filters.toInt(item.star)-filters.toInt(5-item.star)}}" wx:key="index"></image>
+                    <!-- 灰星 -->
+                    <image id="{{index+1}}" src="../../images/star-a.png" wx:for="{{filters.toInt(5-item.star)}}" wx:key="index"></image>
+                  </view>
+                  <text class="rankgrade flex align">{{item.star}}分</text>
+                </view>
+                <text class="learnnum">￥{{filters.toFixs(item.price,2)}}</text>
+              </view>
+            </view>
+            <!-- 右边购买状态和观看人数 -->
+            <view class="rightitem flex direaction justify">
+              <text class="isbuy {{item.isBuy==0?'rgbred':''}}">{{item.isBuy==0?"未购买":"已购买"}}</text>
+              <view class="studynum flex align">
+                <text class="stydycount">{{item.studyNum}}</text>
+                <text>人学习</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="nocourse" wx:else>暂无收藏视频，快去收藏吧</view>
+  </view>
+  <!-- 我的题目收藏板块 -->
+  <view class="myquestioinbox" wx:else>
+    <view>
+      <view wx:if="{{myqueList.length>0}}">
+        <block wx:for="{{myqueList}}" wx:for-item="firstdata" wx:key="firstdata">
+          <!-- 大分类 -->
+          <view class="bigtitbox flex align justify" bindtap="animatelist">
+            <view class="bigtitleft flex align">
+              <view class="bigrank flex center align">{{index+1}}</view>
+              <text class="bigtit">{{firstdata.name}}</text>
+            </view>
+          </view>
+          <!-- 小分类内容容器 -->
+          <view class="subclasslist">
+            <block wx:for="{{firstdata.courseCategoryData}}" wx:for-item="secdata" wx:key="secdata">
+              <!-- 子类容器 -->
+              <view class="subclassitembox flex align" data-id="{{secdata.id}}" bindtap="singleselect">
+                <!--删除按钮 -->
+                <view class="videoleft flex align" wx:if="{{ismanage1}}">
+                  <block wx:if="{{!secdata.checked}}">
+                    <view class="noicon"></view>
+                  </block>
+                  <block wx:else>
+                    <view class="noicon1">
+                      <icon type="success" class="haveicon" size="20" color="rgb(60,135,202)" />
+                    </view>
+                  </block>
+                </view>
+                <view class="subclassitem flex">
+                  <!-- <text class="subclassind">{{index+1}}.</text> -->
+                  <text class="subclasscontent">{{secdata.name}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class="nocourse" wx:else>暂未收藏题目</view>
+    </view>
+  </view>
+  <!-- 删除，全选板块 -->
+  <view class="deletebox flex" wx:if="{{ismanage||ismanage1}}">
+    <view class="allselect flex align center" bindtap="selectAll">{{selectAllStatus?'取消全选':'全选'}}</view>
+    <view class="delnav"></view>
+    <view class="delbtn flex align center" bindtap="del">删除</view>
+  </view>
+</view>

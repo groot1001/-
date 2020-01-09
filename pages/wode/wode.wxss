@@ -1,0 +1,90 @@
+/* miniprogram/pages/wode/wode.wxss */
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-direction{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* bag */
+.wode-bag{width:100%;height:466rpx;position: relative; }
+.wode-bag .img1{width:100%;height:466rpx;}
+.wode-bag .tx-view{position: absolute;z-index:10;top:70rpx;left:0;right:0;margin:auto;width:230rpx;height:230rpx;background: rgba(255,255,255, .2);border-radius: 200rpx;}
+.wode-bag .tx-view image{width:202rpx;height:202rpx;position: absolute;top:15rpx;right:14rpx;border-radius: 100%;}
+.wode-bag .tx-view .wode-vip{width:52rpx;height:52rpx;position: relative;left:170rpx;top:170rpx;}
+.wode-bag .wode-name{width:100%;text-align: center;z-index: 10;display: block;position: absolute;top:320rpx;left:0;right:0;}
+.wode-bag .wode-name text{font-size: 36rpx;color:#fff;}
+.notlogin{
+ position: absolute;
+z-index: 10;
+top: 320rpx;
+left: 0;
+right: 0;
+ 
+}
+.lodinbtn{
+  width: 219rpx;
+  height:52rpx;
+  border-radius: 52rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  margin-bottom: 30rpx;
+}
+.registerbox{
+  font-size: 26rpx;
+}
+.register-info{
+  color: #fff;
+}
+.registernow{
+  color: rgb(255,255,0);
+}
+/* 竖线 */
+.wode-shux{width:100%;height: 20rpx;background: #f4f5f9;}
+/* 列表1 */
+.wode-ul,.wode-ul-2{width:96%;padding-left: 4%;display: flex;flex-direction: column;}
+.wode-li,.wode-li-2{display: flex;flex-direction: row;position: relative;}
+ .img1{position: absolute;top:0;bottom:0;left:0;margin:auto;}
+ .img1-1{width:40rpx;height:40rpx;}
+ .img1-3{width:38rpx;height:38rpx;}
+ .img1-5{width:34rpx;height:44rpx;}
+.img2-1{width:35rpx;height:34rpx;}
+ .img2-2{width:36rpx;height:26rpx;}
+ .img2-3{width:36rpx;height:36rpx;}
+
+.wode-lineir{width:89%;padding:36rpx 0;margin-left:62rpx;border-bottom: 1px solid #ececec;}
+.text1{font-size: 34rpx;color:#333333;}
+ .img-right{width:16rpx;height:26rpx;float: right;margin-right:30rpx;margin-top:16rpx;}
+
+.wode-li:last-child .wode-lineir{
+  border:none;
+}
+.wode-li-2:last-child .wode-lineir{
+  border:none;
+}
+.btn_contact{
+  line-height: 50rpx;
+  background-color: transparent;
+  text-align: left;
+  border-radius: 0;
+}
+.btn_contact::after{
+  border: 0;
+}
+.switchLogon{
+  position: absolute;
+  color: #fff;
+  font-size: 22rpx;
+  top:22rpx;
+  right: 22rpx;
+  display: flex;
+  align-items: center;
+}
+.wode-bag{
+  position: relative;
+}

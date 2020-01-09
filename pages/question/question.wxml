@@ -1,0 +1,196 @@
+<!--pages/question/question.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<wxs module="judges">
+  var judgeGet = function(arr = [], items) {
+    var rest = false;
+    if (!arr) {
+      return false;
+    }
+    if (arr.indexOf(items) != -1) {
+      rest = true;
+    }
+    return rest;
+  }
+  module.exports.judgeGet = judgeGet;
+</wxs>
+<view class='question_tit'>
+  {{patterm}}
+  <view class='question-num'>
+    <text class='question-num1'>{{this_current+1}}</text>
+    <text class='question-num2'>/{{total}}</text>
+  </view>
+</view>
+<view class=''>
+
+  <swiper style='height:{{windowheight-pageHeight}}px;' bindchange='changeCurrent' current="{{this_current}}">
+    <block wx:for="{{question}}" wx:for-item="qitem" wx:for-index="qindex" wx:key="{{qindex}}">
+      <swiper-item>
+        <scroll-view scroll-y="true" style='height:{{windowheight-pageHeight}}px;'>
+          <view wx:if="{{qitem.courseChooseType==4}}" style="font-size:30rpx;width:90%;margin-left:5%;margin-top:22rpx;">
+
+            <rich-text nodes='{{qitem.courseRead}}'></rich-text>
+          </view>
+          <view class='question_title'>{{qitem.courseTitle}}</view>
+
+
+
+
+          <block wx:for="{{qitem.courseChooseValData}}" wx:for-item="aitem" wx:for-index="aindex" wx:key="{{aindex}}">
+            <view class='answer_option' bindtap='make_answers' data-maxid='{{qindex}}' data-typ='{{qitem.courseChooseType}}' data-answer='{{aindex}}'>
+              <!-- 单选题 -->
+              <block wx:if="{{qitem.courseChooseType!=2&&qitem.courseChooseType!=4}}">
+                <view class='letter {{aindex==qitem.userCourseAnswer?"select_this":""}}'>
+                  {{filters.numToLetter(aitem.id)}}
+
+                </view>
+              </block>
+
+              <block wx:if="{{qitem.courseChooseType==2||qitem.courseChooseType==4}}">
+
+                <!-- 多选题模板 -->
+                <view class='letter {{judges.judgeGet(qitem.userCourseAnswer,aindex)?"select_this":""}}'>
+                  {{filters.numToLetter(aitem.id)}}
+
+                </view>
+
+
+              </block>
+              <view class='option_text'>{{aitem.name}}</view>
+
+            </view>
+
+          </block>
+          <view class='bet_next_top' wx:if="{{qitem.courseChooseType==2||qitem.courseChooseType==4}}">
+            <view wx:if="{{qindex!=0}}" class='bnt_item' bindtap='change_que' data-changetype='top'>
+              <text>上一题</text>
+            </view>
+            <view wx:if="{{qindex+1!=total}}" class='bnt_item' bindtap='change_que' data-changetype='next'>
+              <text>下一题</text>
+            </view>
+          </view>
+          <view class='see_answer_parsing' wx:if="{{qitem.answer_parsing_dis}}">
+            <view class='see_answers'>
+              <view class='correct_answers'> [正确答案]：{{filters.numToLetter(qitem.courseAnswer)}}</view>
+              <view class='user_answers'>您的答案：{{filters.numToLetter(qitem.userCourseAnswer)}}</view>
+            </view>
+            <view class='parsing'>
+              <view class='parsing_tit'>答案解析</view>
+              {{qitem.answerParsing}}
+            </view>
+
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 分享 -->
+<button class='share collectBox' wx:if="{{write[0]+write[1] > 0}}" bindtouchmove="touchmove" catch:touchmove style="left:{{write[0]}}px;top:{{write[1]}}px;" open-type='share'>
+
+  <image src='../../images/share.png'></image>
+
+</button>
+<!-- 底部操作 -->
+<view class='bottom_operation' wx:if="{{questionErr}}">
+  <view class='bp-item'>
+    <view class='bp-item'>
+      <image src='../../images/times.png'></image>
+    </view>
+
+    <view class='bp-item-text'>{{answer_time==0?"0:00":answer_time}}</view>
+  </view>
+  <view class='bp-item' bindtap='see_answer'>
+    <view class='bp-item'>
+      <image src='../../images/see.png'></image>
+    </view>
+
+    <view class='bp-item-text'>答案</view>
+  </view>
+  <view bindtap='see_answer_card' class='bp-item'>
+    <view class='bp-item'>
+      <image src='../../images/answer.png'></image>
+    </view>
+
+    <view class='bp-item-text'>答题卡</view>
+  </view>
+  <view class='bp-item' bindtap='submit_question' data-tyb='operation'>
+
+    <view class='bp-item'>
+      <image src='../../images/derive.png'></image>
+    </view>
+    <view class='bp-item-text'>交卷</view>
+  </view>
+</view>
+
+<!-- 答题卡 -->
+
+<view class='answer_card' wx:if="{{answer_card}}" style='height:{{windowheight}}px'>
+  <view class='question_tit'>
+    {{title}}
+    <view class='question-num'>
+      <view class='question-num_item'>
+        <view class='answer_card_top' style='padding-right:46rpx;'>
+          <view class='yuang'></view>
+          <view class=''>未做：{{undone}}</view>
+        </view>
+        <view class='answer_card_top'>
+          <view class='yuang'></view>
+          <view class=''>已做：{{question.length-undone}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <scroll-view style='height:{{windowheight-pageHeight}}px' scroll-y>
+    <view class='toppic-content'>
+
+      <view class='toppic-types'>
+        一、单项选择题（共{{toppic_1.length}}题）
+        <!-- ，每题{{filters.toFixs(toppic_1[0].grade,1)||2}}分 -->
+      </view>
+      <view class='toppic-number'>
+        <block wx:for="{{toppic_1}}" wx:for-item="titem" wx:for-index='index' wx:key='{{index}}'>
+          <view bindtap='make_question_location' data-id='{{titem.id}}' class='toppic-number-item {{titem.userCourseAnswer!=null? "tni":""}}'>
+            {{index+1}}
+
+          </view>
+        </block>
+      </view>
+
+      <view class='toppic-types'>
+        二、多项选择题（共{{toppic_2.length}}题）
+      </view>
+      <view class='toppic-number'>
+        <block wx:for="{{toppic_2}}" wx:for-item="titem" wx:for-index='index' wx:key='{{index}}'>
+          <view bindtap='make_question_location' data-id='{{titem.id}}' class='toppic-number-item {{titem.userCourseAnswer!=null? "tni":""}}'>
+            {{index+1}}
+          </view>
+        </block>
+      </view>
+      <view class='toppic-types'>
+        三、判断题（共{{toppic_3.length}}题）
+      </view>
+      <view class='toppic-number'>
+        <block wx:for="{{toppic_3}}" wx:for-item="titem" wx:for-index='index' wx:key='{{index}}'>
+          <view bindtap='make_question_location' data-id='{{titem.id}}' class='toppic-number-item {{titem.userCourseAnswer!=null? "tni":""}}'>
+            {{index+1}}
+          </view>
+        </block>
+      </view>
+      <view class='toppic-types'>
+        四、不定项选择题（共{{toppic_4.length}}题）
+      </view>
+      <view class='toppic-number'>
+        <block wx:for="{{toppic_4}}" wx:for-item="titem" wx:for-index='index' wx:key='{{index}}'>
+          <view bindtap='make_question_location' data-id='{{titem.id}}' class='toppic-number-item {{titem.userCourseAnswer!=null? "tni":""}}'>
+            {{index+1}}
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </scroll-view>
+  <view class='answer_card_bottom'>
+    <view class="acbitem" bindtap="continues">继续做题</view>
+    <view class="acbitem" bindtap='submit_question' data-tyb='card'> 交卷并查看结果</view>
+  </view>
+</view>

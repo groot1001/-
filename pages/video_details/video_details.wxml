@@ -1,0 +1,238 @@
+<!--pages/video_details/video_details.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<view class='video_details_top'>
+  <!-- <view wx:if="{{plays_video==false}}" class='video_fm' bindtap='plays_video' data-onclicktype='img'>
+    <image mode='widthFix' src='../../images/video_fm.jpg'></image>
+  </view> | \r\n\r\n{{couseinfoData.isLike}}人点赞-->
+  <!-- <view wx:if="{{plays_video==true}}"> autoplay='true'-->
+  <view wx:if="{{is_Buy}}" style="height:418rpx;">
+    <video id="couseVideo" autoplay='{{autoplay}}' bindfullscreenchange='screenChange' title='{{videoCatalogList[maxChapterIndex].currVideoData[minChapterIndex].videoName}}' custom-cache="{{false}}" bindended="bindended" bindplay="bindplay" auto-pause-if-navigate="true"
+      initial-time="{{initial_time}}" bindtimeupdate="bindtimeupdate" bindwaiting="bindwaiting" class='video_tep' src='{{videoSrc}}'>
+      <cover-view wx:if="{{cate_dis}}" class="palys-cate">
+        <cover-view class="palys-cate-text" catchtap="click_cate">{{!cate_block?'倍速':'取消'}}</cover-view>
+
+      </cover-view>
+      <cover-view class="cate_box" wx:if="{{cate_block}}">
+        <cover-view class="cate_tit">播放速度</cover-view>
+        <cover-view class="cate_content">
+          <cover-view class="cate_item {{rateVal==0.5?'this_rate':''}} {{rateVal}}" catchtap="rateFn" data-rate="0.5">0.5x</cover-view>
+          <cover-view class="cate_item {{rateVal==1?'this_rate':''}}" catchtap="rateFn" data-rate="1">1.0x</cover-view>
+          <cover-view class="cate_item {{rateVal==1.5?'this_rate':''}}" catchtap="rateFn" data-rate="1.5">1.5x</cover-view>
+          <cover-view class="cate_item {{rateVal==2?'this_rate':''}}" catchtap="rateFn" data-rate="2">2.0x</cover-view>
+        </cover-view>
+      </cover-view>
+
+    </video>
+  </view>
+  <navigator hover-class="none" url="/pages/lijibaoming/lijibaoming" wx:if="{{!is_Buy}}">
+    <image style="width:100%" mode="widthFix" src="https://www.xuelejia.com/Upload/Banner/app_videoface.jpg"></image>
+  </navigator>
+
+</view>
+<scroll-view bindscrolltolower='bindscrolltolower' bindscroll='bindscroll' scroll-y="true" style="height:{{equipment?(scrollHeight)+'px':(scrollHeight*2)+'rpx'}};position:relative; ">
+
+  <view class="video_info">
+    <view class="videpTit">{{couseinfoData.curriculumName}}</view>
+    <view class="videoLabel">
+
+      已观看：{{couseinfoData.readChapters}}章\r\n\r\n | \r\n\r\n全章：{{couseinfoData.totalChapters}}章\r\n\r\n | \r\n\r\n{{couseinfoData.studyNum}}人学过\r\n\r\n
+    </view>
+    <view class="videoCaozuo">
+      <view catchtap="collectionFn" class="vcItem {{couseinfoData.isCollection?'color_3c87ca':''}}">
+        <view class="iconfont icon-shoucang icf"></view>
+        <view class="">{{couseinfoData.isCollection==1?'已收藏':'收藏'}}</view>
+      </view>
+      <view class="vcItem" bindtap="click_cate">
+        <view wx:if="{{rateVal==0.5}}" class="iconfont icon-bofangye_beisubofang3 icf"></view>
+        <view wx:if="{{rateVal==1}}" class="iconfont icon-bofangye_beisubofang2 icf"></view>
+        <view wx:if="{{rateVal==1.5}}" class="iconfont icon-bofangye_beisubofang icf"></view>
+        <view wx:if="{{rateVal==2}}" class="iconfont icon-bofangye_beisubofang1 icf"></view>
+        <view class="">播放速度</view>
+      </view>
+      <view class="vcItem">
+        <button class='share' open-type='share'>
+          <view class="iconfont icon-fenxiang icf" style="line-height:35rpx;"></view>
+          <view class="" style="line-height: 0px;height:32rpx;">
+            分享
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='video_tab'>
+    <view bindtap='video_tab' data-val='0' class='vt_item {{video_tab==0?"tab_this":""}}'>目录</view>
+    <view bindtap='video_tab' data-val='1' class='vt_item {{video_tab==1?"tab_this":""}}'>详情</view>
+    <view bindtap='video_tab' data-val='2' class='vt_item {{video_tab==2?"tab_this":""}}'>讲义</view>
+    <view bindtap='video_tab' data-val='3' class='vt_item {{video_tab==3?"tab_this":""}}'>评价({{couseinfoData.topicNum}})</view>
+  </view>
+
+  <!-- 目录 -->
+  <view class='course_list' wx:if="{{video_tab==0}}">
+    <view class="chapterList" wx:for="{{videoCatalogList}}" wx:for-item="v" wx:for-index='maxind' wx:key="{{maxind}}">
+      <view class='course_list_top'>
+        <view class='clt_num'>●</view>
+        <view class='clt_title'>{{v.currCategoryName}}</view>
+        <text bindtap="chapterOpenFn" data-maxind="{{maxind}}" class="iconfont {{v.chapterOpen==true?'icon-shouqi':'icon-shouqi1'}} icoimg"></text>
+      </view>
+      <view style="height:{{v.currVideoData.length*80}}rpx;transition: height 0.6s ease-out;" class="miniItem {{v.chapterOpen==true?'min_chapter':'chapterOFF'}}">
+        <block wx:for="{{v.currVideoData}}" wx:for-item="vitem" wx:for-index="ind" wx:key="{{ind}}">
+          <view bindtap='plays_videoFn' data-pid="{{vitem.playerId}}" data-maxind="{{maxind}}" data-minind="{{ind}}" class="video_url_item" data-onclicktype='chapter' data-indexs='{{ind}}' data-playstate='{{vitem.isBuy}}'>
+            <view class='vui_let'>
+              <image wx:if='{{maxind==maxChapterIndex&&ind==minChapterIndex}}' src="../../images/voice.png"></image>
+              <!-- <view wx:if="{{vitem.type_play==true&&ind!=video_index}}" class='vui_yuan'></view>
+            <view wx:if="{{ind==video_index}}" style='color:#fff;font-size:30rpx;margin-left: 10rpx;' class='iconfont icon-sanjiaoxing'></view>
+            <view wx:if="{{vitem.type_play==false}}" style='color:#fc7876' class='iconfont icon-icon-'></view> -->
+            </view>
+            <view class='vui_rig'>
+              <view class='chapter_tit {{maxind==maxChapterIndex&&ind==minChapterIndex?"video_url_item_this":""}}'>{{vitem.videoName}}</view>
+              <view class="video_time">{{filters.toNumber(filters.toStr(vitem.duration,":")[0]*60)+filters.toNumber(filters.toStr(vitem.duration,":")[1])}}分钟</view>
+
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+
+    <!-- <view class="chapterList" wx:for="{{videoCatalogList}}" wx:for-item="v" wx:for-index='maxind'>
+    <view class='course_list_top'>
+      <view class='clt_num'>●</view>
+      <view class='clt_title'>{{v.currCategoryName}}</view>
+      <text bindtap="chapterOpenFn" data-maxind="{{maxind}}" class="iconfont {{maxind==maxChapterIndex&&chapterOpen?'icon-shouqi':'icon-shouqi1'}} icoimg"></text>
+    </view>
+    <view >
+      <block wx:for="{{v.currVideoData}}" wx:for-item="vitem" wx:for-index="ind">
+        <view bindtap='plays_videoFn' data-pid="{{vitem.playerId}}" data-maxind="{{maxind}}" data-minind="{{ind}}" class="video_url_item" data-onclicktype='chapter'  data-indexs='{{ind}}' data-playstate='{{vitem.isBuy}}' >
+          <view class='vui_let'>
+             <image wx:if='{{maxind==maxChapterIndex&&ind==minChapterIndex}}' src="../../images/voice.png" ></image>
+
+          </view>
+          <view class='vui_rig'>
+            <view class='chapter_tit {{maxind==maxChapterIndex&&ind==minChapterIndex?"video_url_item_this":""}}'>{{vitem.videoName}}</view>
+            <view class="video_time">{{filters.toNumber(filters.toStr(vitem.duration,":")[0]*60)+filters.toNumber(filters.toStr(vitem.duration,":")[1])}}分钟</view>
+
+          </view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+
+  </view>
+
+  <!-- 详情 -->
+  <view wx:if="{{video_tab==1}}">
+
+    <view class="synopsis">
+      <view class="synopsis_tit">课程简介</view>
+      <rich-text nodes="{{couseDetails.curriculumBriefing}}"></rich-text>
+    </view>
+    <view>
+      <view class='jianjie_center'>
+        <view class="techers">
+          <view class="techer_tit">
+            <view class="teher_name_log">
+              <view class="logo">
+                <image src="{{imgurl_www}}{{couseDetails.teacherHeadImg}}"></image>
+              </view>
+              <view class="techer_name">
+                <view class="name">{{couseDetails.teacherName}}</view>
+                <view class="collectionPerson">关注人数：{{couseDetails.collectionPerson}}</view>
+              </view>
+            </view>
+            <view class="follow" catchtap="teacherFollow">
+              {{couseDetails.isFollow==0?'未关注':'已关注'}}
+            </view>
+
+          </view>
+          <view class="teacherBriefing">
+            {{couseDetails.teacherBriefing}}
+          </view>
+        </view>
+        <!-- <view class='jianjie_center_txt'>
+        {{course_info.course_info_jieshao}}
+      </view>
+      <view class='jianjie_center_tit'>新大纲《会计基础》章节顺序：</view>
+      <block wx:for="{{course_info.chapter}}" wx:for-index="indexc" wx:for-item="itemc">
+        <view class='jianjie_center_chapter'>
+          <text>第{{indexc+1}}章：{{itemc}}</text>
+        </view>
+      </block> -->
+      </view>
+    </view>
+  </view>
+
+  <!-- 讲义 -->
+  <view wx:if="{{video_tab==2}}" class="handout">
+    <rich-text nodes="{{handout}}"></rich-text>
+  </view>
+  <!-- 评价 -->
+  <view wx:if="{{video_tab==3}}" class="commentMax">
+    <view class="comment_top {{posVlan}}">
+      <view class="ct_let">
+        <text class="iconfont icon-pinglun"></text>{{commentList[0].topicNum}}条评论
+      </view>
+      <view class="ct_rig" bindtap="to_comment">我要评论</view>
+    </view>
+    <view wx:if="commentList.length>0" class="comment_centent">
+      <block wx:for='{{commentList}}' wx:for-item='c' wx:for-index="ind" wx:key="{{ind}}">
+        <view class="comment_item">
+          <view class="comment_item_top">
+            <view class="comment_item_top_let">
+              <image src="{{c.userHeadImg==null?'../../images/aboutUsLogo.png':imgurl_www}}{{c.userHeadImg==null?'':c.userHeadImg}}"></image>
+              <text>{{c.userName}}</text>
+            </view>
+            <view class="comment_item_top_rig">
+              <text>{{c.topicDate}}</text>
+            </view>
+          </view>
+          <view class="topicContent">{{c.topicContent}}</view>
+          <view class="comment_like">
+            <view></view>
+            <view bindtap="make_like" data-index="{{ind}}" data-topicid="{{c.topicId}}" class="make_like">
+              <text class="iconfont icon-dianzan"></text>
+              <text>{{c.likeNum}}</text>
+            </view>
+          </view>
+          <view class="" wx:if="{{replayData.length>0}}">
+            <!-- 回复 -->
+            <block wx:for="{{replayData}}" wx:for-item="ry">
+              <view class="reply_item">
+                <text>{{ry.teacherUserName}}</text>回复
+                <text>{{ry.userName}}：</text>{{replayContent}}
+                <view class="reply_item_tiem">
+                  {{ry.replayTime}}
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view style="font-size:14rpx;text-align: center;margin-top:40rpx" wx:else>
+      暂无数据~
+    </view>
+  </view>
+  <view  style="height: 88rpx;"></view>
+
+</scroll-view>
+
+<!-- 分享 -->
+<!-- <button class='share' open-type='share'>
+  <image src='../../images/share.png'></image>
+</button> -->
+<!-- <view style='height:100rpx;'></view> -->
+<view class='bottom_box'>
+  <view class='bottom_box_let'>
+    <button class='bottom_box_let_button' open-type='contact'>
+      <image class='bottom_box_let_img' src='../../images/zixu.png'></image>
+      咨询
+    </button>
+  </view>
+  <view class='bottom_box_rig'>
+    <view bindtap="bottom_btn"  hover-class='none'>
+      {{courseStatus==2?'立即报名':courseStatus==1?'已购买':courseStatus==0?'立即购买':'正常观看'}}
+    </view>
+  </view>
+</view>

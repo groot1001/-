@@ -1,0 +1,11 @@
+/* pages/reportclass/reportclass.wxss */
+
+/* 课程分类 */
+.tj-class{width:100%;padding:0 30rpx;box-sizing: border-box;}
+.tj-class .class-kec{display: flex;flex-direction: column;margin-bottom: 40rpx;}
+.tj-class .class-kec .class-1{width:100%;height:350rpx;}
+.tj-class .class-kec .text1{font-size: 30rpx;color:#333333;margin-top:20rpx;}
+.tj-class .class-kec .text2{font-size: 24rpx;color:#989898;margin-top:22rpx;}
+.tj-class .class-kec .numder-peo{display: flex;flex-direction: row;margin-top:20rpx;}
+.tj-class .class-kec .numder-peo image{width:30rpx;height:30rpx;margin-right:20rpx;}
+.tj-class .class-kec .numder-peo .num-text{font-size: 24rpx;color:#9f9f9f;}

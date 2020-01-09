@@ -1,0 +1,155 @@
+/* pages/search/search.wxss */
+
+.search_top {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 36rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border: solid #e7e9ee 2rpx;
+  background-color: #f4f5f9;
+}
+
+.search_input {
+  width: 86%;
+  padding-left: 32rpx;
+}
+
+.search_input input {
+  font-size: 24rpx;
+  height: 72rpx;
+}
+
+.search_h_recentiy_border {
+  padding: 0rpx 30rpx;
+  margin-top: 50rpx;
+}
+
+.search_icon {
+  background: transparent;
+  line-height: 72rpx;
+}
+
+.search_icon::after {
+  border: 0;
+}
+
+.search_h_recentiy_item {
+  margin: 16rpx 0;
+  overflow: hidden;
+}
+
+.search_h_recentiy {
+  height: 70rpx;
+  display: flex;
+  border-bottom: 2rpx #f2f2f2 solid;
+  justify-content: space-between;
+  line-height: 70rpx;
+}
+
+.search_h_text {
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.sri {
+  width: 157rpx;
+  float: left;
+  height: 66rpx;
+  text-align: center;
+  background: #f9f9f9;
+  margin: 7rpx;
+}
+
+.sri text {
+  width: 157rpx;
+  height: 66rpx;
+  font-size: 24rpx;
+}
+
+.errpage_img {
+  width: 100%;
+  text-align: center;
+}
+
+.errpage_text {
+  font-size: 26rpx;
+  text-align: center;
+}
+
+/* 视频列表 */
+
+.rest_num {
+  font-size: 24rpx;
+  color: #666;
+  padding-top: 22rpx;
+  padding-left: 30rpx;
+}
+
+.ship-ul {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.ship-ul .ship-li {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.ship-ul .ship-li .img1 {
+  width: 216rpx;
+  height: 152rpx;
+  margin-right: 30rpx;
+}
+
+.ship-ul .ship-li .ship-js {
+  display: flex;
+  flex-direction: column;
+  width: 444rpx;
+}
+
+.ship-ul .ship-li .ship-js .text1 {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.ship-ul .ship-li .ship-js .ship-star {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  line-height: 32rpx;
+}
+
+.ship-ul .ship-li .ship-js .ship-star image {
+  width: 19rpx;
+  height: 19rpx;
+  margin-top: 10rpx;
+}
+
+.ship-ul .ship-li .ship-js .ship-star text {
+  font-size: 24rpx;
+  color: #3c87ca;
+  margin-left: 10rpx;
+}
+
+.ship-ul .ship-li .ship-js .ship-zz {
+  width: 100%;
+  margin-top: 20rpx;
+  height: 20rpx;
+}
+
+.ship-ul .ship-li .ship-js .ship-zz text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.ship-ul .ship-li .ship-js .ship-zz .text-right {
+  display: block;
+  float: right;
+  margin-top: 14rpx;
+}

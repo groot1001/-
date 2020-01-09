@@ -1,0 +1,149 @@
+<!--pages/teacherInfo/teacherInfo.wxml-->
+<view class="teacher_item">
+  <view class="teacher_item_top">
+    <view class="teacher_item_top_let">
+      <image src="{{media_www}}{{teacherData.teacherHImg}}" mode="aspectFill"></image>
+    </view>
+    <view class="teacher_item_top_rig">
+      <view class="teacherName">
+        <text class="tname">{{teacherData.teacherName}}</text>
+        <text class="Grade">{{teacherData.teacherType}}</text>
+      </view>
+      <view class="school">{{teacherData.attendingSchool}}</view>
+      <view class="exp">{{teacherData.sketch}}</view>
+    </view>
+  </view>
+  <view class="teachingStyle">
+    <view class="teachingStyle_label">
+      <text>●</text>\r\n授课风格</view>
+    <view class="teachingStyle_content">
+      {{teacherData.teacherStyle}}
+    </view>
+  </view>
+  <view class="teachingStyle">
+    <view class="teachingStyle_label">
+      <text>●</text>\r\n教学宗旨</view>
+    <view class="teachingStyle_content">
+      {{teacherData.teacherWork}}
+    </view>
+  </view>
+  <!-- <button open-type="contact" class="kf_btn">点击咨询专家</button> -->
+</view>
+
+<view class="open_class">
+  <view class="_top">
+    <view class="_top_tit">开班信息</view>
+    <view class="_top_rig">
+
+    </view>
+  </view>
+  <block wx:for="{{teacherData.teacherOpenClassData}}" wx:for-item="o" wx:for-index="i" wx:key="{{i}}">
+    <navigator hover-class='none' url="" class="OpenClassList">
+      <view class="olimg">
+        <image src="{{media_www}}{{o.classImg}}"></image>
+      </view>
+      <view class="ol_info_box">
+        <view class="olclassname">{{o.className}}</view>
+        <view class="olteacherInfo">
+          <text>主讲:{{o.teacherName}}</text>
+          <text>开课时间：{{o.classBeginTime}}</text>
+        </view>
+        <view class="classDesc">{{o.classDesc}}</view>
+      </view>
+    </navigator>
+  </block>
+  <view wx:if="{{teacherData.teacherOpenClassData.length==0}}" class="tips">暂无数据~</view>
+</view>
+
+<view class="teacherLive">
+  <!-- <view class="_top">
+    <view class="_top_tit">最近直播</view>
+    <view class="_top_rig">
+
+    </view>
+  </view> -->
+
+  <view class="tips">敬请期待~</view>
+</view>
+
+<view class="teacherVideo">
+  <view class="_top">
+    <view class="_top_tit">最近视频</view>
+    <view class="_top_rig">
+
+    </view>
+  </view>
+  <view>
+    <block wx:for='{{teacherData.teacherVideoData}}' wx:for-item='v' wx:for-index="v_ind" wx:key="{{v_ind}}">
+      <navigator hover-class='none' url="/pages/video_details/video_details?vid={{v.curriculumId}}" class="video_item">
+        <view class="video_item-img">
+          <image src="{{media_www}}{{v.image}}" mode="aspectFill"></image>
+        </view>
+        <view class="video_item-info">
+          <view class="video_item-info-tit">
+            {{v.title}}
+          </view>
+          <view class="video_item-info-teacher">
+            <view>主讲：{{v.author}}</view>
+            <view class='{{v.isGratis==0?"isGratis_0":v.isGratis==1?"isGratis_1":v.isGratis==3?"isGratis_3":""}}'>
+              {{v.isGratis==0?"未购买":v.isGratis==1?"免费":v.isGratis==3?"已购买":""}}
+            </view>
+          </view>
+          <view class="video_item-info-score">
+            <view class="">
+              <text wx:for="{{v.star}}" style='color:#3c87ca;font-size:22rpx;' class='iconfont icon-xingxing'></text>
+              <text wx:for="{{5-v.star}}" style='color:#666;font-size:24rpx;' class='iconfont icon-xing'></text>\r\n\r\n{{v.star||0}} 分
+            </view>
+            <view class="">
+              {{v.studyNum||0}}人学习
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view wx:if="{{teacherData.teacherVideoData.length==0}}" class="tips">暂无数据~</view>
+</view>
+
+<view class="interact">
+  <view class="_top">
+    <view class="_top_tit">专家互动</view>
+    <view class="_top_rig">
+
+    </view>
+  </view>
+  <view class="">
+    <block wx:for='{{teacherData.teacherTopicData}}' wx:for-item='c' wx:for-index="ind">
+      <view class="comment_item">
+        <view class="comment_item_top">
+          <view class="comment_item_top_let">
+            <image src="{{media_www}}{{c.userImage}}"></image>
+            <text>{{c.topicUserName}}</text>
+          </view>
+          <view class="comment_item_top_rig">
+            <text>{{c.topicTime}}发布</text>
+          </view>
+        </view>
+        <view class="topicContent">{{c.topicContent}}</view>
+
+        <view class="">
+          <!-- 回复 -->
+          <view class="comment_item teacher_comment_item">
+            <view class="comment_item_top">
+              <view class="comment_item_top_let">
+                <image src="{{media_www}}{{c.teacherReplayData.userImage}}"></image>
+                <text>{{c.teacherReplayData.replayUserName}}</text>
+              </view>
+              <view class="comment_item_top_rig">
+                <text>{{c.teacherReplayData.replayTime}}回复</text>
+              </view>
+            </view>
+            <view class="topicContent teacher_topicContent">{{c.teacherReplayData.replayContent}}</view>
+
+          </view>
+        </view>
+      </view>
+    </block>
+     <view wx:if="{{teacherData.teacherTopicData.length==0}}" class="tips">暂无数据~</view>
+  </view>
+</view>

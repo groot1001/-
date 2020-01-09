@@ -1,0 +1,25 @@
+<!--观看记录-->
+<view wx:for="{{gkjl}}" wx:key="{{index}}">
+<view class="jl-time">
+ <text>{{item.time}}</text>
+</view>
+<!-- 视频 -->
+<view class="ship-ul" >
+ <view bindtap='to_kecheng_info' class="ship-li" wx:for="{{item.ship}}" wx:key="{{index}}">
+   <image class="img1" src='{{item.src}}'></image>
+   <view class="ship-js">
+     <text class="text1">{{item.title}}</text>
+     <view class="ship-star">
+      <!-- <image wx:for="{{item.star}}" wx:key="{{index}}" src='{{item.img}}'></image> -->
+      <label  style='font-size:22rpx;color:#3c87ca;margin-left:2rpx;' wx:for="{{item.star}}" class='iconfont icon-xingxing'></label>
+      <text class="text2">{{item.fs}}</text>
+     </view>
+     <view class="ship-zz">
+     <text>{{item.zz}}</text>
+      <text class="text-right">{{item.peo}}</text>
+     </view>
+   </view>
+ </view>
+</view>
+</view>
+

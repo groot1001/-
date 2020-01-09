@@ -1,0 +1,7 @@
+<!--帮助中心-->
+<view class="help-ul">
+ <view class="help-li" wx:for="{{help}}" wx:key="{{index}}">
+  <text class="text1">{{item.wenti}}</text>
+  <text class="text2">{{item.neir}}</text>
+ </view>
+</view>

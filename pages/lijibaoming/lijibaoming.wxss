@@ -1,0 +1,124 @@
+/* pages/lijibaoming/lijibaoming.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.ljbm_top {
+  height: 328rpx;
+}
+
+.ljbm_top_bg image {
+  width: 100%;
+  height: 328rpx;
+}
+
+.ljbm_top_text_top {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.ljbm_top_text {
+  position: absolute;
+  top: 80rpx;
+  left: 60rpx;
+  height: 328rpx;
+  color: white;
+}
+
+.ljbm_top_text_bottom {
+  font-size: 28rpx;
+  margin-left: 22rpx;
+}
+
+.ljbm_top_text_bottom_item {
+  margin-left: 12rpx;
+}
+
+.star {
+  margin-left: 30rpx;
+}
+
+.ljbm_top_text_bottom_first {
+  margin-top: 38rpx;
+}
+
+.vip_tq {
+  background-color: white;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 100rpx;
+  padding-left: 60rpx;
+}
+
+.vip_tq_content {
+  padding: 0 22rpx 22rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #f4f5f9;
+}
+
+.vtc_item {
+  width: 48.5%;
+  margin-top: 22rpx;
+  height: 165rpx;
+  background: white;
+}
+
+.vtc_item_box image {
+  height: 78rpx;
+  width: 78rpx;
+}
+
+.vtc_item_box {
+  height: 100%;
+  display: flex;
+  padding-left: 30rpx;
+  align-items: center;
+}
+
+.vtc_item_box_btm {
+  height: 100%;
+}
+
+.vtc_item_box_tit {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 22rpx;
+  margin-left: 22rpx;
+}
+
+.vtc_item_box_txte {
+  font-size: 24rpx;
+  color: #999;
+  padding: 12rpx 22rpx;
+}
+
+.tqmsg {
+  font-size: 24rpx;
+  color: #999;
+  background: #f4f5f9;
+  padding: 12rpx 30rpx 30rpx;
+}
+
+.page_bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+}
+.page_bottom_btn{
+  /* position: absolute; */
+  width: 100%;
+  background-color: #3c87ca;
+  color: #fff;
+  border-radius: 0;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+.page_bottom_btn::after{
+  border:0;
+}

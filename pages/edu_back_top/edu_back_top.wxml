@@ -1,0 +1,170 @@
+<!--pages/edu_back_top/edu_back_top.wxml-->
+<view class='edubacktop_banner'>
+  <view class='banner_img'>
+    <image mode='widthFix' src='../../images/edubanner.jpg'></image>
+  </view>
+  <view style=''>
+    <view class='edu_btn'>
+      <view class='edu_entrance'>学历咨询入口>></view>
+      <view class='edu_entrance'>快速提升学历>></view>
+    </view>
+  </view>
+</view>
+
+<view class='tit_eud_box'>
+  学历提升方案定制
+</view>
+
+<view class='edu_back_max'>
+  <block wx:for="{{edu_back}}" wx:for-item="item">
+    <view class='edu_back_item'>
+      <view class='content_text'>
+        <text>{{item}}</text>
+      </view>
+      <view class='content_text'>
+        <view class='conditions'>报考条件</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='tit_eud_box'>
+  为什么你需要一个学历？
+</view>
+
+<view class='edu_back_max'>
+  <block wx:for="{{edu_back_img}}" wx:for-item="item">
+    <view class='edu_back_item_img'>
+      <view class='ebii'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='ebii_tit'>{{item.tit}}</view>
+    </view>
+  </block>
+</view>
+
+<view class='tit_eud_box' style='border-top:5rpx solid #e6e6e6'>
+  关于学历 你必须知道的
+</view>
+
+<view class='edu_back_max'>
+  <block wx:for="{{edu_knowl}}" wx:for-item="item">
+    <view class='edu_back_item_img' style='width:31%;'>
+      <view class='ebii_kimg'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='ebii_k_tit'>{{item.tit}}</view>
+      <view class='ebii_k_txt'>{{item.text}}</view>
+    </view>
+  </block>
+</view>
+<view style='background-color:#eee;'>
+  <view class='tit_eud_box'>
+    热门院校专业推荐
+  </view>
+  <view class='edu_back_max'>
+    <block wx:for="{{tiaokuang}}" wx:for-item="item">
+      <view class='tiaokuang'>
+        <image src='../../images/send-sel.png'></image>{{item}}
+      </view>
+    </block>
+  </view>
+
+</view>
+
+<view style='background-color:#fde6af;position: relative;padding-bottom:50rpx;'>
+  <view class='tit_eud_box'>
+    四大黄金保障条款
+
+  </view>
+  <view class='subheading'>精选好考易过专业 名校本科你也可以读</view>
+  <view class='edu_back_max' style='margin-top:30rpx;'>
+    <block wx:for="{{school_img}}" wx:for-item="item">
+      <view class='recommend'>
+        <view class='recommend_item'>
+          <view>
+            <image src='../../images/{{item.img}}.jpg'></image>
+          </view>
+          <view class='re_item_tit'>{{item.tit}}</view>
+          <view class='re_brn'>了解免考政策</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='more_school'>咨询更多院校</view>
+</view>
+<view style='position: relative;padding-bottom:50rpx;'>
+  <view class='tit_eud_box' style='color:#3c87ca;'>
+    全新升级版授课
+  </view>
+  <view class='subheading_02'>学乐佳全明星教师阵容</view>
+  <view style='height:70rpx;'></view>
+  <view class='teacher_lineup'>
+    <view class='hezhao'>
+      <image mode='widthFix' src='../../images/hezhao.jpg'></image>
+    </view>
+    <view class='teacher_lineup_introduce'>
+      <view class='t_l_i_num'>01</view>
+      <view class='t_l_i_text'>每周4*12小时直播面授辅导，8大学乐佳名师跟踪 教学服务
+      </view>
+    </view>
+    <view class='teacher_lineup_introduce'>
+      <view class='t_l_i_num'>02</view>
+      <view class='t_l_i_text'>低基础入门，教材精讲，知识点解析，冲刺串讲、考前模考全录播模块教学
+      </view>
+    </view>
+    <view class='teacher_lineup_introduce'>
+      <view class='t_l_i_num'>03</view>
+      <view class='t_l_i_text'>2019年最新教材变动直播：强化全新考试方向，精讲全新考试和重点
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='tit_eud_box' style='border-top:5rpx solid #e6e6e6'>
+  学乐佳学员评论区
+</view>
+<view class='comment'>
+  <view class='comment_item'>
+    <view class='comment_item_logo'>
+      <image src='../../images/comment_item_logo_01.png'></image>
+    </view>
+    <view class='comment_item_text'>
+      26岁了科学家得像个学生一样学习，没办法，生活所 迫！今天不努力，我怕我35岁还得在初级执行层...
+
+    </view>
+    <view class='see_box'>
+      <text style='color:#666;font-size:24rpx;' class='iconfont iconyanjing'></text> 169
+    </view>
+  </view>
+  <view class='comment_item'>
+    <view class='comment_item_logo'>
+      <image src='../../images/comment_item_logo_02.png'></image>
+    </view>
+    <view class='comment_item_text'>
+      周末玩的太嗨，耽误了几节课没好好听，争取晚上补 回来，学乐佳小伙伴们，你们别把我丢下了！
+
+    </view>
+    <view class='see_box'>
+      <text style='color:#666;font-size:24rpx;' class='iconfont iconyanjing'></text> 292
+    </view>
+  </view>
+</view>
+
+<view class='tit_eud_box' style='border-top:5rpx solid #e6e6e6'>
+  更多热门专业供你选择
+</view>
+
+<view class='select_specialty'>
+  <block wx:for="{{select_specialty}}" wx:for-item="item">
+    <view bindtap='' hover-class='this_select' hover-stay-time="1000" class='select_specialty_item'>{{item}}</view>
+  </block>
+  <view class='gengdou'>
+   <text>更多专业 </text>
+   <text style='font-size:24rpx;color:#ff5901' wx:for="{{2}}" class='iconfont icon-xiangyou'></text>
+  </view>
+</view>
+<view style='height:100rpx;'></view>
+<button open-type='contact' class='contact'>
+   <text style='font-size:68rpx;' class='iconfont icon-xiaoxi'></text> 咨询
+</button>

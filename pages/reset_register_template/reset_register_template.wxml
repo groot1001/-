@@ -1,0 +1,25 @@
+<!--pages/reset_register_template/reset_register_template.wxml-->
+<template name="resetregister">
+  <view class="registerbox">
+    <view class="registerinput">
+      <view class="phonepart">
+        <input placeholder="常用手机号" class="phonenum" value="{{phoneNum}}" bindinput="bindPhone"></input>
+        <text class="phonetxt">手机</text>
+      </view>
+      <view class="psdpart flex align">
+        <input placeholder="请输入验证码" class="psd" value="{{phonecode}}" bindinput="bindCode"></input>
+        <view class="codeline"></view>
+        <button class='sendcode flex align center' bindtap="getCode" disabled='{{disabled}}' style="background:{{btncolor}}">{{timetxt}}</button>
+        <!-- <view class="sendcode flex align center" bindtap="getCode" style="background:{{btncolor}}">{{timetxt}}</view> -->
+        <!-- <input type="button" disabled="disabled" class="sendcode" value="{{timetxt}}" bindtap="getCode"></input> -->
+      </view>
+    </view>
+    <!-- <view class="next flex align center" bindtap="tomodify" bindtap="toregister">下一步</view> -->
+    <!-- <view class="sendflex">
+      <view class="sendnowbox">
+        <text class="sendtxy">正在发送</text>
+        <text class="sendtime">(59)</text>
+      </view>
+    </view> -->
+  </view>
+</template>

@@ -1,0 +1,51 @@
+<!--pages/mycourse/mycourse.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<view class="mycoursebox">
+  <view class="mycourselist">
+    <!-- 大分类 -->
+    <view wx:if="{{mycourseList.length}}">
+    <block wx:for="{{mycourseList}}" wx:for-item="mycourseitem" wx:key="mycourseitem">
+      <view class="mycouselistItem">
+        <!-- 大分类标题 -->
+        <view class="bigtitbox flex align justify" data-ind="{{index}}" bindtap="animatelist">
+          <view class="bigtitleft flex align">
+            <view class="bigrank flex center align">{{index+1}}</view>
+            <text class="bigtit">{{mycourseitem.name}}</text>
+          </view>
+          <image src="../../images/downarrow.png" class="showicon {{mycourseitem.checked?'arrowdown':'arrowright'}}"></image>
+        </view>
+        <!-- 小分类列表 -->
+        <view class="smalllist {{mycourseitem.checked?'showlist':'hidelist'}}">
+          <block wx:for="{{mycourseitem.curriculumData}}" wx:for-item="Subclassdata" wx:key="Subclassdata">
+            <view class="smalllistItem flex justify" data-types="{{Subclassdata.curriculumType}}" data-id="{{Subclassdata.id}}" data-vname="{{Subclassdata.title}}" data-img="http://www.xuelejia.com/{{Subclassdata.image}}" bindtap="tovideodetail">
+              <view class="smalllistItemleft flex">
+                <image src="http://www.xuelejia.com/{{Subclassdata.image}}" class="leftitem"></image>
+                <view class="middleitem">
+                  <text class="smalltit">{{Subclassdata.title}}</text>
+                  <view class="smallrank flex align">
+                    <view class="starnum flex align">
+                      <!-- 全星 -->
+                      <image id="{{index+1}}" src="../../images/star-b.png" wx:for="{{filters.toInt(Subclassdata.star)}}" wx:key="index"></image>
+                      <!-- 半星 -->
+                      <image id="{{index+1}}" src="../../images/star-c.png" wx:for="{{5-filters.toInt(Subclassdata.star)-filters.toInt(5-Subclassdata.star)}}" wx:key="index"></image>
+                      <!-- 灰星 -->
+                      <image id="{{index+1}}" src="../../images/star-a.png" wx:for="{{filters.toInt(5-Subclassdata.star)}}" wx:key="index"></image>
+                    </view>
+                    <text class="rankgrade flex align">{{Subclassdata.star}}分</text>
+                  </view>
+                  <text class="learnnum">{{Subclassdata.studyNum}}人学习</text>
+                </view>
+              </view>
+              <view class="rightitem">
+              {{Subclassdata.isBuy==1?"已购买":''}}
+              {{Subclassdata.isBuyChapter==1?'部分购买':''}}
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    </view>
+    <view wx:else class="nocourse">暂无课程~</view>
+  </view>
+</view>

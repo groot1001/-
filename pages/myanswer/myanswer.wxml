@@ -1,0 +1,11 @@
+<!--pages/myanswer/myanswer.wxml-->
+<import src="../answertemplate/answertemplate.wxml" />
+<view class="gz-ul">
+  <view wx:if="{{dataList.length}}">
+    <block wx:for="{{dataList}}" wx:key="{{index}}">
+      <!-- 使用答疑列表模板 -->
+      <template is="myanswer" data="{{...item}}"></template>
+    </block>
+  </view>
+  <view wx:else class="nocourse">暂无关注~</view>
+</view>

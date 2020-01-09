@@ -1,0 +1,102 @@
+/* pages/aboutus/aboutus.wxss */
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.direction {
+  flex-direction: column;
+}
+
+.line {
+  width: 100%;
+  height: 10rpx;
+  background: #f4f5f9;
+}
+
+body, html {
+  background-color: rgb(244, 245, 249);
+}
+
+.mybrandbox {
+  padding: 50rpx 0;
+  background-color: #fff;
+}
+
+.mybrandbox image {
+  width: 216rpx;
+  height: 216rpx;
+}
+
+.mybrandinfo {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: rgb(1, 1, 1);
+}
+
+.mybrandnamemybrandname {
+}
+
+.mybrandversion {
+}
+
+.xlj-dialog {
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.dialogItem {
+  height: 115rpx;
+  border-bottom: 1rpx solid rgb(245, 245, 245);
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+}
+
+.xljrule {
+  height: 115rpx;
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.rule-left {
+}
+
+.rule-right image {
+  width: 20rpx;
+  height: 38rpx;
+}
+page{
+  
+  background-color: rgb(245, 245, 245);
+}
+.footer {
+  bottom: 0;
+  left: 0;
+width: 100%;
+  background-color: rgb(245, 245, 245);
+  position: absolute;
+}
+
+.footer-text {
+  color: rgb(153, 153, 153);
+  font-size: 30rpx;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+}

@@ -1,0 +1,205 @@
+<!-- banner -->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<import src="../answertemplate/answertemplate.wxml" />
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="rgba(255,255,255,.1)" indicator-active-color="#fff" circular="true">
+  <block wx:for="{{banners}}" wx:key="{{index}}">
+    <swiper-item>
+      <image lazy-load="true" src="{{media_www}}{{item.image}}" class="slide-image" mode="aspectFill" />
+    </swiper-item>
+  </block>
+
+</swiper>
+
+<!-- 三大块 -->
+<view class="sandakuai">
+  <!-- <navigator class="sdk-view" url="/pages/zzsc/zzsc"> -->
+  <navigator class="sdk-view" url="/pages/video_list/video_list?videoType=2" hover-class='none'>
+    <image src='../../images/sandak-1.png'></image>
+    <text>财税实操</text>
+  </navigator>
+  <navigator class="sdk-view" url='/pages/video_list/video_list?videoType=1' hover-class='none'>
+    <image src='../../images/sandak-2.png'></image>
+    <text>职称考证</text>
+  </navigator>
+  <navigator class="sdk-view" url='/pages/video_list/video_list?videoType=5' hover-class='none'>
+    <image src='../../images/sandak-3.png'></image>
+    <text>财税管理</text>
+  </navigator>
+  <navigator class="sdk-view" url="/pages/video_list/video_list?videoType=4" hover-class='none'>
+    <image src='../../images/sandak-4.png'></image>
+    <text>办公文秘</text>
+  </navigator>
+  <!-- <navigator class="sdk-view" url="/pages/video_list/video_list?videoType=3" hover-class='none'>
+    <image src='../../images/bbjh.gif'></image>
+    <text>报班计划</text>
+  </navigator> -->
+</view>
+<!-- 横线 -->
+<view class="hx-first"></view>
+
+<!-- 举荐课程 -->
+
+<view class="recommend_course_max">
+  <view class="recommend_course_top">
+    <view class="recommend_course_tit">推荐视频</view>
+    <view class="recommend_course_rig">
+      <scroll-view scroll-x='true' class="recommend_course_class">
+        <block wx:if='{{recommend_course.length<3}}'>
+          <view wx:for='{{3-recommend_course.length}}' wx:for-index="r" wx:key="{{r}}" class="scroll_item2">
+          </view>
+        </block>
+
+        <block wx:for='{{recommend_course}}' wx:for-item="c" wx:for-index='ind' wx:key="{{ind}}">
+          <view bindtap="sele_class" data-vtype="{{c.vtype}}" data-cind="{{ind}}" class="scroll_item">
+            <text wx:if='{{c.vtype==4}}' class="hot_class iconfont icon-hot"></text>
+            <text class="{{current_index==ind?'class_this':''}}">{{c.cateName}}</text>
+          </view>
+        </block>
+
+        <!-- <view wx:if='{{recommend_course.length<3}}' class="scroll_item">
+          <text class="hot_class iconfont icon-hot"></text> 办公文秘
+        </view> -->
+
+      </scroll-view>
+    </view>
+  </view>
+  <view class="course_list">
+    <swiper bindchange='bindchange' autoplay="" indicator-dots="" class="course_swiper" current="{{current_index}}" style="height:{{(208*(recommend_course[current_index].videoData.length))+80}}rpx;transition:height 0.6s;">
+      <block wx:for='{{recommend_course}}' wx:for-item='c' wx:for-index="ind" wx:key="{{ind}}">
+        <swiper-item>
+          <block wx:for='{{c.videoData}}' wx:for-item='v' wx:for-index="v_ind" wx:key="{{v_ind}}">
+            <view bindtap="toSeeVideo" data-vid="{{v.id}}" data-img="{{media_www}}{{v.image}}" data-vname="{{v.title}}" class="video_item">
+              <view class="video_item-img ">
+                <view class="rec_tips">{{v.isGratis==1?'试听':'推荐'}}
+
+                </view>
+                <image src="{{media_www}}{{v.image}}" class="{{filters.wxsFindIndex(img_id,'_'+ind+'_'+ v_ind)?'img_bg':''}}" id="{{'_'+ind+'_'+ v_ind}}" binderror="course_img_err" mode="aspectFill"></image>
+
+              </view>
+              <view class="video_item-info">
+                <view class="video_item-info-tit">
+                  {{v.title}}
+                </view>
+                <view class="video_item-info-teacher">
+                  <view>主讲：{{v.author}}</view>
+                  <view class='{{v.isGratis==0?"isGratis_0":v.isGratis==1?"isGratis_1":v.isGratis==3?"isGratis_3":""}}'>
+                   
+                    {{platform=='android'?v.isGratis==0?"未购买":v.isGratis==1?"免费":v.isGratis==3?"已购买":"":'查看详情'}}
+                  </view>
+                </view>
+                <view class="video_item-info-score">
+                  <view class="">
+                    <text wx:for="{{v.star}}" wx:for-index="st" wx:key="{{st}}" style='color:#3c87ca;font-size:22rpx;' class='iconfont icon-xingxing'></text>
+                    <text wx:for="{{5-v.star}}" wx:for-index="s" wx:key="{{s}}" style='color:#666;font-size:24rpx;' class='iconfont icon-xing'></text>\r\n\r\n{{v.star||0}} 分
+                  </view>
+                  <view class="">
+                    {{v.studyNum||0}}人学习
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <navigator hover-class='none' url="/pages/video_list/video_list?videoType={{videoType}}" class="more_courses">
+            更多课程
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<!-- 举荐课程end -->
+<button class="ad_contact" open-type="contact">
+  <!--AD img-->
+  <image style="width:100%;" mode="widthFix" src="../../images/ad01.png"></image>
+</button>
+
+<!-- 在线专家 -->
+<view class="teacher">
+  <view class="_top">
+    <view class="_top_tit">在线专家</view>
+    <view class="_top_rig">
+      <view class="_top_rig_nav">
+        <navigator hover-class='none' url="/pages/teacherList/teacherList">专家列表</navigator>
+
+      </view>
+    </view>
+  </view>
+  <swiper indicator-color="#e3e3e3" indicator-active-color="#ff5901" class="teacher_box" circular="true" autoplay="true" indicator-dots="true">
+    <blcok wx:for="{{teacher_data}}" wx:for-item="titem" wx:for-index="t" wx:key="{{t}}">
+      <swiper-item>
+        <view class="teacher_list">
+
+          <navigator wx:for="{{titem}}" wx:for-item="m" wx:for-index="o" wx:key="{{o}}" url="/pages/teacherInfo/teacherInfo?tid={{m.teacherId}}" hover-class="none" class="teacher_list_item">
+            <view class="teacher_img">
+              <image src="{{media_www}}{{m.teacherHImg}}" mode="aspectFill"></image>
+            </view>
+            <view class="teacher_name">{{m.teacherName}}</view>
+            <view class="teacher_occupation">{{m.teacherType}}</view>
+          </navigator>
+        </view>
+
+      </swiper-item>
+    </blcok>
+  </swiper>
+</view>
+
+<!-- 在线专家 end-->
+
+<!-- 答疑圈子 -->
+<view class="question">
+  <view class="_top">
+    <view class="_top_tit">答疑</view>
+    <view class="_top_rig">
+      <view class="_top_rig_nav" bindtap="publish">我要发表</view>
+    </view>
+  </view>
+  <view class="gz-ul">
+    <block wx:for="{{newanswerList}}" wx:key="{{index}}">
+      <!-- 使用答疑列表模板 -->
+      <template is="myanswer" data="{{...item}}"></template>
+    </block>
+  </view>
+</view>
+<!-- 答疑圈子end -->
+<!-- 横线 -->
+<view class="hx-first"></view>
+<!-- 最新动态 -->
+<view class="new_info">
+  <view class="_top">
+    <view class="_top_tit">最新政策动态</view>
+    <view class="_top_rig">
+      <view class="more" bindtap="topolicy">更多</view>
+    </view>
+  </view>
+  <view class="news_info_list">
+    <view class="new_info_item" data-id="{{n.id}}" wx:for='{{news_preferen}}' wx:for-item='n' wx:for-index='nindex' wx:key='{{nindex}}' bindtap="topolicydetail">
+      <view class="news_tit">{{n.title}}</view>
+      <view class="new_bottom">
+        <view class="">{{n.catsName}}</view>
+        <view class="">{{n.createTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 最新动态 end -->
+
+<!-- ad02 -->
+<!-- <button class="ad_contact" open-type="contact">
+
+  <image style="width:100%;" mode="widthFix" src="../../images/ad02.png"></image>
+</button> -->
+<!-- ad02 end-->
+<!-- 底部line -->
+<view class="page_bottom">
+  <view class="bottom_line"></view>
+  <view class="bottom_tips">已经到底啦！</view>
+  <view class="bottom_line"></view>
+</view>
+
+<!-- style="right:{{screen.width-61-touchE[0]}}px;bottom:{{screen.height-61-touchE[1]}}px" -->
+<button  class="swt_contact collectBox"  wx:if="{{write[0]+write[1] > 0}}" bindtouchmove="touchmove" catch:touchmove style="left:{{write[0]}}px;top:{{write[1]}}px;" open-type="contact">
+
+  <view style="font-size:42rpx;" class="iconfont icon-kefu"></view>
+  <view>客服 </view>
+
+</button>

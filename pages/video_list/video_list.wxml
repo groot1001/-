@@ -1,0 +1,101 @@
+<!--pages/video_list/video_list.wxml-->
+
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+
+<view class="top_screen">
+  <view class="top_screen_item" bindtap='{{couseCategoryData.length>1?"screen_dis":""}}'>
+    {{top_screen_name}}
+    <text class="iconfont icon-sanjiaoxing1 icotop"></text>
+  </view>
+  <view class="top_screen_item" bindtap='{{couseCategoryData.length>1?"screen_dis2":""}}'>
+    排序方式
+    <text class="iconfont icon-sanjiaoxing1 icotop"></text>
+  </view>
+</view>
+<view style="height: 90rpx;"></view>
+<view class='zhezhao' hidden="{{flag}}" bindtap="screen_dis">
+  <!--这是一个遮罩层，在框弹出后遮住框外区域-->
+</view>
+<!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+<scroll-view scroll-y="true" class="open_box {{blockes=='css1'?'css1':'css2'}}" style='display:{{screen_box}};'>
+  <blcok wx:if="{{param.videoType==1}}">
+    <view class="open_item_1">
+
+      <view class="oitem_one_let">
+
+        <scroll-view scroll-y style="height:100%">
+          <block wx:for="{{couseCategoryData}}" wx:for-item="c" wx:for-index="ind" wx:key="{{ind}}">
+            <view class="oolitem {{cindex==ind?'oolitem_hover':''}}" bindtap="click_maxClass" data-ind="{{ind}}" wx:if='{{ind!=0}}'>
+              {{c.name}}
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="oitem_one_rig">
+        <scroll-view scroll-y style="height:100%">
+          <view class="mincousecategory">
+            <view bindtap="selectedCouse" data-cname='课程分类' data-cid="0" class="mcc_item {{couseCategoryMinId==0?'minCategory':''}}">全部</view>
+            <block wx:for="{{couseCategoryData[cindex].subType}}" wx:for-item="s" wx:for-index="c" wx:key='{{c}}'>
+              <view bindtap="selectedCouse" data-cname="{{s.name}}" data-cid="{{s.id}}" class="mcc_item {{couseCategoryMinId==s.id?'minCategory':''}}">{{s.name}}</view>
+            </block>
+
+            <!-- <view wx:if="{{couseCategoryData[cindex].subType.length==0}}" class="tips_text">暂无数据~</view> -->
+
+          </view>
+        </scroll-view>
+
+      </view>
+
+    </view>
+  </blcok>
+  <block wx:else>
+    <!-- style="color:{{param.screenWhere==1?'#3c87ca':'#333'}}" -->
+    <view class="open_item_3s">
+      <block wx:for="{{couseCategoryData}}" wx:for-item="s" wx:for-index="ci" wx:key="{{ci}}">
+        <view class="oitem3 {{couseCategoryMinId==s.id?'minCategory':''}}" bindtap="selectedCouse" data-cname="{{s.name}}" data-cid="{{s.id}}">{{s.name}}</view>
+      </block>
+  
+    </view>
+
+  </block>
+</scroll-view>
+
+<view class='zhezhao' hidden="{{flag2}}" bindtap="screen_dis2">
+  <!--这是一个遮罩层，在框弹出后遮住框外区域-->
+</view>
+<!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+<scroll-view scroll-y="true" class="open_box {{blockes2=='css1'?'css1_2':'css2_2'}}" style='display:{{screen_box2}};'>
+  <view class="open_item_2">
+    <view class="oitem" bindtap="sortOrder" data-sw="1" style="color:{{param.screenWhere==1?'#3c87ca':'#333'}}">热门</view>
+    <view class="oitem" bindtap="sortOrder" data-sw="2" style="color:{{param.screenWhere==2?'#3c87ca':'#333'}}">最新</view>
+  </view>
+</scroll-view>
+
+
+
+<view wx:if="{{video_chlids.length>0}}">
+  <block wx:for="{{video_chlids}}" wx:for-item="item" wx:for-index="vs" wx:key='{{vs}}'>
+    <view bindtap='to_see_video' data-img="{{imgurl_www}}{{item.firstImage}}" data-vid="{{item.id}}" data-vname="{{item.curriculumName}}" class='video_list'>
+      <view class='video_list_let'>
+        <image src='{{imgurl_www}}{{item.firstImage}}'></image>
+      </view>
+      <view class='video_list_rig'>
+        <view class='video_tit'>{{item.curriculumName}}</view>
+        <view class='score'>
+          <text wx:for="{{item.star}}" wx:for-index="s" wx:key='{{s}}'  style='color:#3c87ca;font-size:22rpx;' class='iconfont icon-xingxing'></text>
+          <text wx:for="{{5-item.star}}" wx:for-index="r" wx:key='{{r}}' style='color:#666;font-size:24rpx;' class='iconfont icon-xing'></text>\r\n\r\n{{item.star||0}} 分</view>
+
+
+        <view class='video_list_rig_btm'>
+          <!-- <view class='author'>{{item.author}}</view> -->
+          <view wx:if="{{item.price&&platform=='android'}}" class='viewing_number'>￥{{item.price}}</view>
+         
+          <view class="studys">{{item.studyNum||0}}人学习</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class="tips_text">
+  暂无数据~
+</view>

@@ -1,0 +1,3 @@
+<!--pages/web_view/web_view.wxml-->
+
+<web-view src="https://www.xuelejia.com/waphome"></web-view>

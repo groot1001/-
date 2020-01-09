@@ -1,0 +1,15 @@
+<!--pages/reportclass/reportclass.wxml-->
+
+<view class='tj-class'>
+<navigator url='/pages/reportclass_details/reportclass_details' hover-class='none'>
+  <view class="class-kec" wx:for="{{tuiclass}}" wx:key="{{index}}">
+    <image class="class-1" src='{{item.url}}'></image>
+    <text class="text1">{{item.text1}}</text>
+    <text class="text2">{{item.text2}}</text>
+    <view class="numder-peo">
+      <image src='../../images/ship.png'></image>
+      <text class="num-text">{{item.text3}}</text>
+    </view>
+  </view>
+  </navigator>
+</view>

@@ -1,0 +1,141 @@
+/* pages/answertemplate/answertemplate.wxss */
+
+.flex {
+  display: flex;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.justifycenter {
+  justify-content: center;
+}
+
+.gz-ul {
+  padding: 0 30rpx;
+  margin-top: 108rpx;
+}
+
+.gz-ul .gz-li {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0 20rpx 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.gz-ul .gz-li:nth-last-child(1) {
+border-bottom: none;
+}
+
+.gz-ul .gz-li .li1 {
+  height: 72rpx;
+  width: 100%;
+  line-height: 72rpx;
+  /* display: flex; */
+}
+
+.gz-ul .gz-li .li1 .liicon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  background: url(https://www.xuelejia.com/Upload/Banner/201805251049212011.jpg) no-repeat center;
+  background-size: 72rpx 72rpx;
+  float: left;
+}
+
+.gz-ul .gz-li .li1 .img1 {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  float: left;
+}
+
+.gz-ul .gz-li .li1 .name {
+  font-size: 30rpx;
+  color: #666;
+  float: left;
+  margin-left: 40rpx;
+}
+
+.gz-ul .gz-li  .time {
+  font-size: 24rpx;
+  color: #ccc;
+  float: right;
+}
+
+.gz-ul .gz-li .wenti {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.gz-ul .gz-li .huifu {
+  display: flex;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.gz-ul .gz-li .huifu .hf-blue {
+  /* padding: 5rpx 10rpx; */
+  font-size: 24rpx;
+  color: #fff;
+  background: #3c87ca;
+  border-radius: 10rpx;
+  width: 65rpx!important;
+  height: 46rpx;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ line-height: 46rpx;
+}
+
+.gz-ul .gz-li .huifu .hf-neir {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 88%;
+}
+
+.gz-ul .gz-li .li1-bot {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.gz-ul .gz-li .li1-bot .text-bot {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.gz-ul .gz-li .li1-bot .concernbtn {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.concernbtn1 {
+  background-color: #3c87ca;
+  color: #fff;
+  border-radius: 4rpx;
+  padding: 5rpx;
+}
+
+.gz-ul .gz-li .li1-bot .time2 {
+  margin-top: 14rpx;
+}
+
+.nocounts {
+  padding: 30rpx;
+  margin-top: 108rpx;
+  text-align: center;
+}

@@ -1,0 +1,59 @@
+<!--pages/questionbank_list/questionbank_list.wxml-->
+<wxs module="filters" src="../../utils/retain.wxs"></wxs>
+<blcok wx:for="{{questionbank_list}}" wx:for-item="ql" wx:for-index="indq" wx:key='{{indq}}'>
+  <view class='quemax'>
+    <view bindtap='see_questionbank' data-id='{{ql.id}}' data-ind='{{indq}}' class='questionbank_list'>
+
+      <view wx:if="{{ql.permission}}" style='font-size:28rpx;color:#3c87ca;' class='iconfont icon-sanjiaoxing1'></view>
+
+      <view wx:else style='font-size:28rpx;color:#3c87ca;' class='iconfont icon-sanjiaoxing'></view>
+
+      <view class='questionbank_tit'>{{ql.name}}</view>
+      <view wx:if="{{ql.finishcount>0}}" class='states states-t '>
+       {{ql.finishcount+"/"+ql.totalcount}}
+       </view>
+       <view wx:else class='states states-f'>
+           未做
+       </view>
+      <!-- <view wx:else class='soutou'>
+        <text style='font-size:42rpx;color:#fc7876' class='iconfont icon-icon-'></text>
+      </view>  -->
+    </view>
+    <view class="{{!ql.permission?'Chapteroff':''}}" style="">
+
+      <block wx:for="{{ql.questionbank_item}}" wx:for-item="qbi" wx:for-index="qbiindex" wx:key="{{qbiindex}}">
+        <view class='questionbank_item' catchtap='ejectbox' data-name='{{qbi.name}}' data-sates="{{qbi.finishCount}}" data-id="{{qbi.id}}" data-chapterind="{{qbiindex}}">
+          <view class='qbi_img'>
+            <image src='../../images/bi.png'></image>
+          </view>
+          <view class='qbi_titbank'>
+            <view class='qbi_topic'>{{qbi.name}}</view>
+            <view class='progressbar'>
+              <progress style='border-radius:100px;overflow:hidden' activeColor="#3c87ca" percent="{{qbi.finishCount/qbi.totalCount*100}}" stroke-width="12" />
+            </view>
+          </view>
+          <view class='states_sum'>
+<!--           
+            <view class='qblb {{qbi.sates>0?"states-t":"states-f"}}'>{{qbi.finishCount>0?qbi.finishCount+"/"+qbi.totalCount:"未做"}}</view> -->
+            <view class='complete_nun'>{{qbi.finishCount}}/{{qbi.totalCount}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</blcok>
+<view style='height:{{windowheight}}px;background-color: rgba(0, 0, 0, 0.4);position: fixed;z-index: 998;width:100%;top:0' wx:if="{{ejectbox_dispaly==true}}">
+<view wx:if="{{ejectbox_dispaly==true}}" class='ejectbox'>
+  <view class='ejectbox_item' data-exit="2" bindtap='make_question'>再做一遍</view>
+  <!-- <view class='ejectbox_item' bindtap='make_question'>错题重做</view> -->
+  <view class='ejectbox_item' data-exit='2' bindtap='make_question'>继续上次</view>
+  <view class='ejectbox_item' bindtap='make_question' data-exit='0'>取消</view>
+</view>
+</view>
+
+<!-- 搜索 -->
+<!-- <view class='sosobox'>
+  <navigator url='/pages/search/search' hover-class='none'>
+    <text style='font-size: 44rpx;' class='iconfont icon-sousuos'></text>
+  </navigator>
+</view> -->
